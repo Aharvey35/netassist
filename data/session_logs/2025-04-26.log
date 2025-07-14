@@ -1,0 +1,210 @@
+2025-04-26 10:45:19,233 - Executed command: whois cisco.com
+2025-04-26 10:45:55,778 - Executed command: whois asi-networks
+2025-04-26 10:46:07,351 - Executed command: whois asi-networks.com
+2025-04-26 11:06:35,486 - Executed command: fun
+2025-04-26 11:06:39,940 - Executed command: 2
+2025-04-26 11:06:42,191 - Executed command: fun
+2025-04-26 11:06:49,975 - Executed command: fun
+2025-04-26 11:07:34,609 - Executed command: weather
+2025-04-26 11:07:40,754 - Executed command: weather
+2025-04-26 11:07:56,342 - Executed command: weather city of industry
+2025-04-26 11:08:02,671 - Executed command: weather
+2025-04-26 11:08:09,647 - Executed command: weather
+2025-04-26 11:11:51,900 - Executed command: system
+2025-04-26 11:12:31,616 - Executed command: ls
+2025-04-26 11:12:40,032 - Executed command: sysadmin
+2025-04-26 11:12:45,954 - Executed command: sysadmin
+2025-04-26 11:12:51,277 - Executed command: sysadmin 2
+2025-04-26 11:12:54,601 - Executed command: sysadmin
+2025-04-26 11:13:05,906 - Executed command: sysadmin
+2025-04-26 11:14:00,297 - Executed command: system
+2025-04-26 11:14:02,673 - Executed command: system
+2025-04-26 11:14:05,281 - Executed command: system 2
+2025-04-26 11:14:07,723 - Executed command: system
+2025-04-26 11:14:13,279 - Executed command: sysadmin
+2025-04-26 11:14:18,614 - Executed command: sysadmin
+2025-04-26 11:14:26,509 - Executed command: sysadmin
+2025-04-26 11:20:31,936 - Session started.
+2025-04-26 11:21:02,080 - Session ended.
+2025-04-26 11:25:55,320 - Session started.
+2025-04-26 11:26:47,703 - Session ended.
+2025-04-26 11:27:08,529 - Session started.
+2025-04-26 11:32:43,731 - Session ended.
+2025-04-26 11:34:31,927 - Session started.
+2025-04-26 11:40:42,410 - Session started.
+2025-04-26 12:02:47,460 - Session ended.
+2025-04-26 12:06:41,375 - Session started.
+2025-04-26 12:12:42,612 - Session ended.
+2025-04-26 12:15:07,647 - Session started.
+2025-04-26 12:22:45,710 - Session ended.
+2025-04-26 12:23:10,612 - Session started.
+2025-04-26 12:25:22,302 - Session ended.
+2025-04-26 12:25:54,391 - Session started.
+2025-04-26 12:32:05,778 - Session ended.
+2025-04-26 12:39:28,390 - Session started.
+2025-04-26 12:43:24,131 - Session started.
+2025-04-26 12:45:27,379 - Session ended.
+2025-04-26 12:45:39,106 - Session started.
+2025-04-26 12:45:59,063 - Session ended.
+2025-04-26 12:46:01,919 - Session started.
+2025-04-26 12:47:16,885 - Session started.
+2025-04-26 12:57:44,516 - Session ended.
+2025-04-26 12:57:46,213 - Session started.
+2025-04-26 12:57:53,465 - Session ended.
+2025-04-26 12:58:00,227 - Session started.
+2025-04-26 13:11:30,814 - Session started.
+2025-04-26 13:15:32,799 - Session started.
+2025-04-26 13:20:36,875 - Session ended.
+2025-04-26 13:33:17,141 - Session started.
+2025-04-26 13:35:50,321 - Session started.
+2025-04-26 13:35:55,551 - Session started.
+2025-04-26 14:20:16,378 - Session started.
+2025-04-26 14:20:17,749 - Session ended.
+2025-04-26 14:20:35,877 - Session started.
+2025-04-26 14:20:38,189 - Session started.
+2025-04-26 14:22:53,588 - Session started.
+2025-04-26 14:24:42,963 - Session started.
+2025-04-26 14:29:01,381 - Session started.
+2025-04-26 14:29:52,585 - Session ended.
+2025-04-26 14:32:53,216 - Session started.
+2025-04-26 14:33:34,615 - Session ended.
+2025-04-26 14:34:39,682 - Session started.
+2025-04-26 14:35:39,756 - Session ended.
+2025-04-26 14:37:01,261 - Session started.
+2025-04-26 14:51:16,721 - Session ended.
+2025-04-26 15:08:07,923 - Session started.
+2025-04-26 15:08:12,724 - Session started.
+2025-04-26 15:08:32,613 - Session started.
+2025-04-26 15:10:44,292 - Session ended.
+2025-04-26 15:11:25,440 - Session started.
+2025-04-26 15:12:50,186 - Session ended.
+2025-04-26 15:14:11,309 - Session started.
+2025-04-26 15:47:04,586 - Session ended.
+2025-04-26 15:47:08,081 - Session started.
+2025-04-26 15:47:51,475 - Session ended.
+2025-04-26 16:08:13,998 - Session started.
+2025-04-26 16:08:41,741 - Session ended.
+2025-04-26 16:08:51,116 - Session started.
+2025-04-26 16:10:01,695 - Session ended.
+2025-04-26 16:13:12,383 - Session started.
+2025-04-26 16:13:36,828 - Session started.
+2025-04-26 16:13:37,674 - Session started.
+2025-04-26 16:14:03,367 - Session started.
+2025-04-26 16:20:16,232 - Session ended.
+2025-04-26 16:26:24,728 - Session started.
+2025-04-26 16:31:20,582 - Session ended.
+2025-04-26 16:32:40,157 - Session started.
+2025-04-26 16:35:53,115 - Session ended.
+2025-04-26 16:36:01,079 - Session started.
+2025-04-26 16:44:08,860 - Session ended.
+2025-04-26 16:45:23,591 - Session started.
+2025-04-26 16:52:35,548 - Session ended.
+2025-04-26 16:54:21,807 - Session started.
+2025-04-26 16:55:34,423 - Session ended.
+2025-04-26 16:55:48,070 - Session started.
+2025-04-26 17:01:11,063 - Session started.
+2025-04-26 17:02:17,816 - Session ended.
+2025-04-26 17:07:26,265 - Session started.
+2025-04-26 17:08:12,125 - Session ended.
+2025-04-26 17:23:45,228 - Session started.
+2025-04-26 17:50:45,042 - Session ended.
+2025-04-26 17:52:07,724 - Session started.
+2025-04-26 17:57:08,833 - Session ended.
+2025-04-26 17:57:40,135 - Session started.
+2025-04-26 17:57:43,593 - Session started.
+2025-04-26 17:57:47,581 - Session started.
+2025-04-26 17:58:58,441 - Session ended.
+2025-04-26 17:59:41,219 - Session started.
+2025-04-26 17:59:43,891 - Session started.
+2025-04-26 17:59:46,867 - Session started.
+2025-04-26 18:00:00,394 - Session ended.
+2025-04-26 18:00:20,893 - Session started.
+2025-04-26 18:06:00,494 - Session ended.
+2025-04-26 18:06:10,013 - Session started.
+2025-04-26 18:10:38,383 - Session ended.
+2025-04-26 18:10:44,356 - Session started.
+2025-04-26 18:15:45,307 - Session started.
+2025-04-26 18:16:09,713 - Session started.
+2025-04-26 18:20:18,609 - Session ended.
+2025-04-26 18:20:45,685 - Session started.
+2025-04-26 18:21:14,463 - Session started.
+2025-04-26 18:24:10,121 - Session ended.
+2025-04-26 18:30:30,483 - Session started.
+2025-04-26 18:33:55,371 - Session ended.
+2025-04-26 18:34:31,771 - Session started.
+2025-04-26 18:39:34,242 - Session started.
+2025-04-26 18:45:27,317 - Session ended.
+2025-04-26 18:46:16,420 - Session started.
+2025-04-26 18:46:52,989 - Session ended.
+2025-04-26 18:48:46,502 - Session started.
+2025-04-26 18:48:57,072 - Session started.
+2025-04-26 18:57:53,390 - Session ended.
+2025-04-26 18:59:21,552 - Session started.
+2025-04-26 18:59:24,158 - Session started.
+2025-04-26 19:23:38,733 - Session ended.
+2025-04-26 19:34:57,938 - Session started.
+2025-04-26 19:36:11,972 - Session ended.
+2025-04-26 19:37:32,187 - Session started.
+2025-04-26 19:50:58,495 - Session ended.
+2025-04-26 19:51:40,875 - Session started.
+2025-04-26 19:53:52,123 - Session ended.
+2025-04-26 19:59:01,479 - Session started.
+2025-04-26 20:02:34,344 - Session ended.
+2025-04-26 20:03:12,742 - Session started.
+2025-04-26 20:06:58,105 - Session ended.
+2025-04-26 20:08:12,704 - Session started.
+2025-04-26 20:19:08,025 - Session ended.
+2025-04-26 20:21:49,167 - Session started.
+2025-04-26 20:28:00,386 - Session ended.
+2025-04-26 20:28:24,503 - Session started.
+2025-04-26 20:40:22,331 - Session ended.
+2025-04-26 20:52:36,038 - Session started.
+2025-04-26 20:53:15,071 - Session ended.
+2025-04-26 20:53:25,805 - Session started.
+2025-04-26 20:53:30,020 - Session ended.
+2025-04-26 20:53:35,269 - Session started.
+2025-04-26 20:54:20,651 - Session ended.
+2025-04-26 20:57:12,500 - Session started.
+2025-04-26 21:01:52,908 - Session ended.
+2025-04-26 21:09:15,225 - Session started.
+2025-04-26 21:09:35,963 - Session ended.
+2025-04-26 21:12:11,328 - Session started.
+2025-04-26 21:14:16,686 - Session ended.
+2025-04-26 21:15:46,025 - Session started.
+2025-04-26 21:17:00,926 - Session ended.
+2025-04-26 21:17:56,781 - Session started.
+2025-04-26 21:19:49,797 - Session ended.
+2025-04-26 21:20:08,281 - Session started.
+2025-04-26 21:43:09,705 - Session ended.
+2025-04-26 21:59:25,861 - Session started.
+2025-04-26 22:07:00,591 - Session ended.
+2025-04-26 22:09:01,271 - Session started.
+2025-04-26 22:14:20,526 - Session ended.
+2025-04-26 22:16:27,325 - Session started.
+2025-04-26 22:18:41,735 - Session started.
+2025-04-26 22:18:47,167 - Session ended.
+2025-04-26 22:19:28,781 - Session started.
+2025-04-26 22:20:27,630 - Session ended.
+2025-04-26 22:20:55,876 - Session started.
+2025-04-26 22:24:26,914 - Session ended.
+2025-04-26 22:24:40,734 - Session started.
+2025-04-26 22:27:47,306 - Session ended.
+2025-04-26 22:27:59,554 - Session started.
+2025-04-26 22:32:47,280 - Session ended.
+2025-04-26 22:34:00,173 - Session started.
+2025-04-26 22:34:59,286 - Session ended.
+2025-04-26 22:35:27,065 - Session started.
+2025-04-26 22:44:00,339 - Session started.
+2025-04-26 22:44:18,768 - Session ended.
+2025-04-26 22:45:21,091 - Session started.
+2025-04-26 22:46:45,252 - Session ended.
+2025-04-26 22:47:11,873 - Session started.
+2025-04-26 22:47:46,044 - Session ended.
+2025-04-26 22:48:57,183 - Session started.
+2025-04-26 22:54:07,535 - Session started.
+2025-04-26 22:56:25,452 - Session ended.
+2025-04-26 23:03:15,879 - Session started.
+2025-04-27 08:45:18,339 - Session started.
+2025-04-27 08:55:00,162 - Session started.
+2025-04-27 09:04:58,844 - Session ended.
+2025-04-27 09:29:40,374 - Session ended.

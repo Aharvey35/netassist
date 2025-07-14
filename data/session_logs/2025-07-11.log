@@ -1,0 +1,107 @@
+2025-07-11 09:01:26,770 - Session started.
+2025-07-11 09:01:38,624 - Port check: 10.10.10.10:80 - Closed
+2025-07-11 09:02:16,503 - Port check: 24.43.10.105:80 - Open
+2025-07-11 09:02:20,828 - Port check: 24.43.10.105:81 - Closed
+2025-07-11 09:02:37,227 - Port check: 24.43.10.105:80 - Open
+2025-07-11 09:02:37,342 - Port check: 24.43.10.105:443 - Open
+2025-07-11 09:02:39,445 - Port check: 24.43.10.105:22 - Closed
+2025-07-11 09:02:39,557 - Port check: 24.43.10.105:21 - Open
+2025-07-11 09:06:34,090 - Session ended.
+2025-07-11 09:09:39,753 - Session started.
+2025-07-11 09:10:33,346 - Session ended.
+2025-07-11 09:12:09,410 - Session started.
+2025-07-11 09:12:36,202 - Session ended.
+2025-07-11 09:16:08,004 - Session started.
+2025-07-11 09:16:21,899 - Session ended.
+2025-07-11 09:18:19,517 - Session started.
+2025-07-11 09:20:06,558 - Session ended.
+2025-07-11 09:20:29,045 - Session started.
+2025-07-11 09:28:47,177 - Session ended.
+2025-07-11 09:33:26,574 - Session started.
+2025-07-11 09:35:55,303 - Session ended.
+2025-07-11 09:35:56,808 - Session started.
+2025-07-11 09:38:52,869 - Session ended.
+2025-07-11 09:39:01,430 - Session started.
+2025-07-11 09:39:10,242 - Listed network interfaces with stats.
+2025-07-11 09:39:41,668 - Session ended.
+2025-07-11 09:39:46,585 - Session started.
+2025-07-11 09:40:03,270 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:04,271 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:05,271 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:06,273 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:07,274 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:08,275 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:09,276 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:10,279 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:11,280 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:12,281 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:13,282 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:14,283 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:15,284 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:16,285 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:17,287 - Real-time bandwidth monitored for all interfaces
+2025-07-11 09:40:45,906 - Bandwidth summary for eth0: snetio(bytes_sent=348054, bytes_recv=10915844, packets_sent=4568, packets_recv=10913, errin=0, errout=0, dropin=0, dropout=0)
+2025-07-11 09:41:05,060 - Real-time bandwidth monitored for eth0
+2025-07-11 09:41:06,062 - Real-time bandwidth monitored for eth0
+2025-07-11 09:41:07,063 - Real-time bandwidth monitored for eth0
+2025-07-11 09:41:17,715 - Listed network interfaces with stats.
+2025-07-11 09:41:23,936 - Real-time bandwidth monitored for lo
+2025-07-11 09:41:24,936 - Real-time bandwidth monitored for lo
+2025-07-11 09:41:25,938 - Real-time bandwidth monitored for lo
+2025-07-11 09:41:26,939 - Real-time bandwidth monitored for lo
+2025-07-11 09:41:27,940 - Real-time bandwidth monitored for lo
+2025-07-11 09:41:28,941 - Real-time bandwidth monitored for lo
+2025-07-11 09:41:29,942 - Real-time bandwidth monitored for lo
+2025-07-11 09:41:30,943 - Real-time bandwidth monitored for lo
+2025-07-11 09:41:31,943 - Real-time bandwidth monitored for lo
+2025-07-11 09:41:32,944 - Real-time bandwidth monitored for lo
+2025-07-11 09:41:42,290 - Real-time bandwidth monitored for eth0
+2025-07-11 09:41:43,291 - Real-time bandwidth monitored for eth0
+2025-07-11 09:41:44,292 - Real-time bandwidth monitored for eth0
+2025-07-11 09:41:45,293 - Real-time bandwidth monitored for eth0
+2025-07-11 09:41:46,294 - Real-time bandwidth monitored for eth0
+2025-07-11 09:41:47,295 - Real-time bandwidth monitored for eth0
+2025-07-11 09:41:48,296 - Real-time bandwidth monitored for eth0
+2025-07-11 09:41:49,297 - Real-time bandwidth monitored for eth0
+2025-07-11 09:41:50,299 - Real-time bandwidth monitored for eth0
+2025-07-11 09:41:51,300 - Real-time bandwidth monitored for eth0
+2025-07-11 09:41:54,080 - Exported bandwidth data to data/bandwidth_logs/bandwidth_log_20250711_094154.csv
+2025-07-11 09:46:26,899 - Session ended.
+2025-07-11 09:46:30,544 - Session started.
+2025-07-11 09:46:42,709 - Session ended.
+2025-07-11 09:46:44,469 - Session started.
+2025-07-11 09:52:26,369 - Session ended.
+2025-07-11 09:53:07,864 - Session started.
+2025-07-11 09:53:42,637 - Command failed: Command '['sudo', 'iwlist', 'wlan0', 'scan']' returned non-zero exit status 1.
+2025-07-11 09:54:04,032 - Command failed: Command '['sudo', 'iwlist', 'wlan0', 'scan']' returned non-zero exit status 1.
+2025-07-11 09:56:21,422 - Session ended.
+2025-07-11 09:56:23,313 - Session started.
+2025-07-11 09:56:26,609 - Required command not found. Ensure WiFi tools are installed (e.g., nmcli on Linux, airport on macOS).
+2025-07-11 09:57:27,282 - Session ended.
+2025-07-11 09:57:29,456 - Session started.
+2025-07-11 10:21:17,960 - Session ended.
+2025-07-11 10:21:21,856 - Session started.
+2025-07-11 10:21:27,361 - Required command not found. Ensure WiFi tools are installed (e.g., nmcli on Linux, airport on macOS).
+2025-07-11 10:24:34,079 - Session ended.
+2025-07-11 10:24:36,583 - Session started.
+2025-07-11 10:24:44,494 - Scanned 7 WiFi networks.
+2025-07-11 10:28:14,474 - Session ended.
+2025-07-11 10:28:16,168 - Session started.
+2025-07-11 10:28:22,470 - Required command not found. Ensure WiFi tools are installed (e.g., nmcli on Linux, airport on macOS).
+2025-07-11 10:28:37,483 - Required command not found. Ensure WiFi tools are installed (e.g., nmcli on Linux, airport on macOS).
+2025-07-11 10:28:38,975 - Session ended.
+2025-07-11 10:28:44,022 - Session started.
+2025-07-11 10:28:49,472 - Scanned 9 WiFi networks.
+2025-07-11 10:30:46,677 - Session ended.
+2025-07-11 10:30:51,424 - Session started.
+2025-07-11 10:37:25,749 - Required command not found. Ensure WiFi tools are installed (e.g., nmcli on Linux, airport on macOS).
+2025-07-11 10:39:22,632 - Session ended.
+2025-07-11 10:39:25,639 - Session started.
+2025-07-11 10:39:31,400 - Scanned 8 WiFi networks.
+2025-07-11 10:47:10,759 - Session ended.
+2025-07-11 10:47:12,840 - Session started.
+2025-07-11 10:47:20,431 - Scanned 8 WiFi networks.
+2025-07-11 10:47:36,346 - Command '['netsh.exe', 'wlan', 'add', 'profile', 'filename=/tmp/tmpcbmlgbyl.xml']' failed with exit code 1: 
+2025-07-11 10:47:52,410 - Session ended.
+2025-07-11 10:47:54,103 - Session started.
+2025-07-11 10:48:05,055 - Scanned 7 WiFi networks.

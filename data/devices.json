@@ -1,0 +1,14 @@
+{
+  "labserver": {
+    "ip": "192.168.0.200",
+    "username": "Aaron"
+  },
+  "workstation1": {
+    "ip": "10.1.1.51",
+    "username": "adminuser"
+  },
+  "gateway": {
+    "ip": "192.168.0.1",
+    "username": "admin"
+  }
+}

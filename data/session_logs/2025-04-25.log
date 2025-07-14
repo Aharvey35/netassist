@@ -1,0 +1,218 @@
+2025-04-25 20:08:33,297 - Executed command: 
+2025-04-25 20:08:33,450 - Executed command: 
+2025-04-25 20:08:33,584 - Executed command: 
+2025-04-25 20:08:35,768 - Executed command: 
+2025-04-25 20:08:35,915 - Executed command: 
+2025-04-25 20:08:48,000 - Executed command: ascii
+2025-04-25 20:08:59,274 - Executed command: system
+2025-04-25 20:09:05,458 - Executed command: system
+2025-04-25 20:09:08,004 - Executed command: system 2
+2025-04-25 20:09:24,937 - Executed command: system
+2025-04-25 20:09:29,751 - Executed command: system
+2025-04-25 20:09:40,196 - Executed command: system
+2025-04-25 20:09:43,563 - Executed command: system 4
+2025-04-25 20:09:46,598 - Executed command: system
+2025-04-25 20:09:55,180 - Executed command: ls
+2025-04-25 20:09:57,086 - Executed command: 
+2025-04-25 20:10:13,624 - Executed command: bonus
+2025-04-25 20:10:33,548 - Executed command: motd
+2025-04-25 20:10:37,348 - Executed command: motd
+2025-04-25 20:10:55,800 - Executed command: network
+2025-04-25 20:11:06,758 - Executed command: network 2
+2025-04-25 20:11:13,873 - Executed command: network
+2025-04-25 20:11:40,558 - Executed command: network
+2025-04-25 20:14:07,666 - Executed command: system
+2025-04-25 20:14:59,645 - Executed command: connect
+2025-04-25 20:15:02,999 - Executed command: help
+2025-04-25 20:15:08,583 - Executed command: version
+2025-04-25 20:15:11,871 - Executed command: history
+2025-04-25 20:15:13,551 - Executed command: ls
+2025-04-25 20:15:17,798 - Executed command: security
+2025-04-25 20:15:29,876 - Executed command: ascii
+2025-04-25 20:15:46,618 - Executed command: ascii
+2025-04-25 20:15:56,182 - Executed command: ascii
+2025-04-25 20:15:58,307 - Executed command: ascii
+2025-04-25 20:16:04,487 - Executed command: system
+2025-04-25 20:16:14,188 - Executed command: network
+2025-04-25 20:16:19,193 - Executed command: pubilc
+2025-04-25 20:16:21,513 - Executed command: help
+2025-04-25 20:20:27,316 - Executed command: system
+2025-04-25 20:20:55,461 - Executed command: network
+2025-04-25 20:21:07,223 - Executed command: cisco.com
+2025-04-25 20:21:11,368 - Executed command: network
+2025-04-25 20:21:25,948 - Executed command: security
+2025-04-25 20:22:20,563 - Executed command: ls
+2025-04-25 20:23:52,937 - Executed command: ls
+2025-04-25 20:24:15,861 - Executed command: connect
+2025-04-25 20:24:26,130 - Executed command: 2
+2025-04-25 20:24:32,659 - Executed command: network
+2025-04-25 20:24:56,208 - Executed command: connect
+2025-04-25 20:25:15,689 - Executed command: system
+2025-04-25 20:26:33,175 - Executed command: ls
+2025-04-25 20:27:03,981 - Executed command: ascii
+2025-04-25 20:29:45,989 - Executed command: clear
+2025-04-25 20:29:49,851 - Executed command: history
+2025-04-25 20:29:53,764 - Executed command: clear
+2025-04-25 20:29:54,472 - Executed command: cls
+2025-04-25 20:32:05,312 - Executed command: network
+2025-04-25 20:32:47,323 - Executed command: bonus
+2025-04-25 20:32:48,984 - Executed command: motd
+2025-04-25 20:32:51,035 - Executed command: motd
+2025-04-25 20:32:53,487 - Executed command: security
+2025-04-25 20:32:56,065 - Executed command: version
+2025-04-25 20:43:27,877 - Executed command: motd
+2025-04-25 20:43:29,366 - Executed command: motd
+2025-04-25 20:43:30,541 - Executed command: motd
+2025-04-25 20:43:31,543 - Executed command: ls
+2025-04-25 20:43:39,160 - Executed command: network
+2025-04-25 20:43:48,648 - Executed command: geoip 8.8.8.8
+2025-04-25 20:43:53,750 - Executed command: help
+2025-04-25 20:44:01,125 - Executed command: help history
+2025-04-25 20:44:04,021 - Executed command: help weather
+2025-04-25 20:44:04,904 - Executed command: ls
+2025-04-25 20:44:11,346 - Executed command: ping 8.8.8.8
+2025-04-25 20:44:17,408 - Executed command: ping 8.8.8.8 -t
+2025-04-25 20:44:26,761 - Executed command: ascii
+2025-04-25 20:44:44,671 - Executed command: wildcardcalc 10.3.0.0/21
+2025-04-25 20:45:00,060 - Executed command: asci
+2025-04-25 20:45:01,313 - Executed command: ascii
+2025-04-25 20:45:03,734 - Executed command: ascii
+2025-04-25 20:45:07,340 - Executed command: ascii
+2025-04-25 20:45:10,670 - Executed command: ascii
+2025-04-25 20:45:12,360 - Executed command: ascii
+2025-04-25 20:45:17,260 - Executed command: ifocnfig
+2025-04-25 20:45:18,975 - Executed command: ifconfig
+2025-04-25 20:45:27,601 - Executed command: ascii
+2025-04-25 20:45:29,468 - Executed command: ascii
+2025-04-25 20:45:30,809 - Executed command: ascii
+2025-04-25 20:45:32,177 - Executed command: ascii
+2025-04-25 20:45:34,822 - Executed command: ascii
+2025-04-25 20:45:38,520 - Executed command: motd
+2025-04-25 20:45:39,873 - Executed command: motd
+2025-04-25 20:45:46,613 - Executed command: ls
+2025-04-25 20:46:14,513 - Executed command: network
+2025-04-25 20:46:50,344 - Executed command: security
+2025-04-25 20:46:58,037 - Executed command: ls
+2025-04-25 20:47:06,500 - Executed command: ls
+2025-04-25 20:47:08,386 - Executed command: motd
+2025-04-25 20:47:10,707 - Executed command: version
+2025-04-25 20:47:14,012 - Executed command: ls
+2025-04-25 20:47:29,739 - Executed command: security
+2025-04-25 20:47:30,621 - Executed command: ls
+2025-04-25 20:47:38,832 - Executed command: weather
+2025-04-25 20:47:43,808 - Executed command: bonus
+2025-04-25 20:47:46,765 - Executed command: bonus 1
+2025-04-25 20:47:53,644 - Executed command: bonus
+2025-04-25 20:49:57,877 - Executed command: motd
+2025-04-25 20:50:16,101 - Executed command: ls
+2025-04-25 20:50:21,310 - Executed command: security
+2025-04-25 20:50:27,707 - Executed command: cls
+2025-04-25 20:50:31,372 - Executed command: 
+2025-04-25 20:50:31,507 - Executed command: 
+2025-04-25 20:50:32,339 - Executed command: ls
+2025-04-25 20:50:33,582 - Executed command: cls
+2025-04-25 20:50:36,277 - Executed command: ls
+2025-04-25 20:50:37,560 - Executed command: cls
+2025-04-25 20:50:39,218 - Executed command: ls
+2025-04-25 20:51:53,531 - Executed command: ipconfig
+2025-04-25 20:51:55,229 - Executed command: ifconfig
+2025-04-25 20:51:58,918 - Executed command: ipconfig
+2025-04-25 20:52:00,499 - Executed command: ifconfig
+2025-04-25 20:52:05,134 - Executed command: cls
+2025-04-25 20:52:07,159 - Executed command: cidr
+2025-04-25 20:52:11,369 - Executed command: subnetcalc
+2025-04-25 20:52:18,465 - Executed command: wildcardcalc
+2025-04-25 20:52:27,407 - Executed command: wildcardcalc 10.1.1.1
+2025-04-25 21:03:30,189 - Executed command: 
+2025-04-25 21:03:30,354 - Executed command: 
+2025-04-25 21:03:30,508 - Executed command: 
+2025-04-25 21:03:31,140 - Executed command: 
+2025-04-25 21:03:32,353 - Executed command: 
+2025-04-25 21:03:33,278 - Executed command: motd
+2025-04-25 21:03:35,017 - Executed command: motd
+2025-04-25 21:03:36,171 - Executed command: motd
+2025-04-25 21:03:38,407 - Executed command: ls
+2025-04-25 21:03:42,548 - Executed command: key
+2025-04-25 21:03:48,558 - Executed command: connect
+2025-04-25 21:04:01,946 - Executed command: masterkey
+2025-04-25 21:04:04,399 - Executed command: ls
+2025-04-25 21:05:05,919 - Executed command: ascii
+2025-04-25 21:05:09,046 - Executed command: asci
+2025-04-25 21:05:10,739 - Executed command: ascii
+2025-04-25 21:05:13,402 - Executed command: ascii
+2025-04-25 21:05:14,757 - Executed command: ascii
+2025-04-25 21:05:17,969 - Executed command: ascii
+2025-04-25 21:05:20,517 - Executed command: ascii
+2025-04-25 21:05:22,084 - Executed command: ascii
+2025-04-25 21:05:23,585 - Executed command: ascii
+2025-04-25 21:05:25,116 - Executed command: ascii
+2025-04-25 21:06:13,061 - Executed command: cs
+2025-04-25 21:06:13,859 - Executed command: cls
+2025-04-25 21:06:42,430 - Executed command: ping cisco.com
+2025-04-25 21:12:59,612 - Executed command: MOTD
+2025-04-25 21:13:02,282 - Executed command: motd
+2025-04-25 21:13:11,172 - Executed command: motd
+2025-04-25 21:13:15,201 - Executed command: ls
+2025-04-25 21:13:19,721 - Executed command: masterkey
+2025-04-25 21:13:21,552 - Executed command: ls
+2025-04-25 21:13:25,904 - Executed command: help
+2025-04-25 21:13:30,488 - Executed command: motd
+2025-04-25 21:13:34,668 - Executed command: network
+2025-04-25 21:13:37,875 - Executed command: network 1
+2025-04-25 21:26:10,710 - Executed command: geoip 8.8.8.8
+2025-04-25 21:26:12,826 - Executed command: motd
+2025-04-25 21:26:15,665 - Executed command: motd
+2025-04-25 21:26:24,731 - Executed command: masterkey
+2025-04-25 21:26:33,523 - Executed command: ls
+2025-04-25 21:26:46,533 - Executed command: masterkey
+2025-04-25 21:26:51,668 - Executed command: ls
+2025-04-25 21:27:06,335 - Executed command: weather
+2025-04-25 21:27:16,061 - Executed command: ls
+2025-04-25 21:27:24,816 - Executed command: network
+2025-04-25 21:27:28,926 - Executed command: connect
+2025-04-25 21:27:44,676 - Executed command: system
+2025-04-25 21:35:11,843 - Executed command: 
+2025-04-25 21:35:11,843 - Executed command: 
+2025-04-25 21:35:11,844 - Executed command: 
+2025-04-25 21:35:11,846 - Executed command: 
+2025-04-25 21:35:11,846 - Executed command: 
+2025-04-25 21:35:21,357 - Executed command: cls
+2025-04-25 21:35:21,358 - Executed command: 
+2025-04-25 21:35:21,359 - Executed command: 
+2025-04-25 21:35:21,359 - Executed command: 
+2025-04-25 21:35:21,360 - Executed command: 
+2025-04-25 21:35:21,361 - Executed command: 
+2025-04-25 21:35:21,361 - Executed command: 
+2025-04-25 21:35:21,362 - Executed command: 
+2025-04-25 21:35:21,362 - Executed command: 
+2025-04-25 21:35:21,362 - Executed command: 
+2025-04-25 21:35:21,363 - Executed command: 
+2025-04-25 21:35:59,223 - Executed command: ascii
+2025-04-25 21:36:17,798 - Executed command: asc
+2025-04-25 21:36:19,333 - Executed command: ascii
+2025-04-25 21:47:48,146 - Executed command: ?
+2025-04-25 21:47:49,115 - Executed command: ls
+2025-04-25 21:47:50,230 - Executed command: help
+2025-04-25 21:47:57,165 - Executed command: ls
+2025-04-25 21:48:31,186 - Executed command: publicip
+2025-04-25 21:48:44,261 - Executed command: network 1.1.1.1
+2025-04-25 21:49:28,864 - Executed command: 
+2025-04-25 21:49:29,077 - Executed command: 
+2025-04-25 21:49:29,945 - Executed command: ls
+2025-04-25 21:49:35,317 - Executed command: masterkey
+2025-04-25 21:49:36,455 - Executed command: ls
+2025-04-26 10:37:15,278 - Executed command: help
+2025-04-26 10:37:39,600 - Executed command: system
+2025-04-26 10:37:43,892 - Executed command: help
+2025-04-26 10:37:46,177 - Executed command: version
+2025-04-26 10:37:50,720 - Executed command: help
+2025-04-26 10:37:53,792 - Executed command: ls
+2025-04-26 10:38:00,851 - Executed command: omls
+2025-04-26 10:38:02,370 - Executed command: ls
+2025-04-26 10:38:13,633 - Executed command: dnslookup zomelis.net
+2025-04-26 10:38:54,651 - Executed command: ipconfig
+2025-04-26 10:38:56,888 - Executed command: ls
+2025-04-26 10:38:57,792 - Executed command: clear
+2025-04-26 10:41:05,684 - Executed command: whois cisco.com
+2025-04-26 10:41:13,581 - Executed command: 
+2025-04-26 10:44:57,289 - Executed command: whois cisco.com
