@@ -12,6 +12,7 @@ import platform
 import json
 import random
 import time
+from modules import user_manager
 from colorama import init, Fore
 from difflib import get_close_matches
 
@@ -19,14 +20,56 @@ from difflib import get_close_matches
 init(autoreset=True)
 
 # === GLOBAL SETTINGS ===
-VERSION = "NetAssist Pro 5.2"
+VERSION = "NetAssist Pro 5.3"
+#USER_NAME = "Aaron"  # TODO: make dynamic later
+#USER_PROFILE = user_manager.load_user(USER_NAME)
+
+#USER_RANK = USER_PROFILE["title"]
+#USER_BADGE = USER_PROFILE["badge"]
+#USER_LEVEL = USER_PROFILE["level"]
+#USER_XP = USER_PROFILE["xp"]
+
+# --- stub globals so print_banner() can always see them ---
+USER_NAME = ""
+USER_PROFILE = {}
+USER_RANK = ""
+USER_BADGE = ""
+USER_LEVEL = 0
+USER_XP = 0
+
+
+import yaml
+from pathlib import Path
+
+# === YAML profiles for leveling & titles ===
+PROFILES_FILE = Path('data/user_profiles.yaml')
+# JSON list of selectable roles
+TITLES_FILE   = Path('data/titles.json')
+DEFAULT_PROFILE = { "xp": 0, "level": 1, "title": "Rookie", "badge": "::..::" }
+
+def load_all_profiles():
+    if not PROFILES_FILE.exists():
+        PROFILES_FILE.parent.mkdir(exist_ok=True)
+        PROFILES_FILE.write_text("")  # create empty file
+    return yaml.safe_load(PROFILES_FILE.read_text()) or {}
+
+def save_all_profiles(p):
+    PROFILES_FILE.write_text(yaml.dump(p, sort_keys=False))
+
+def get_or_create_profile(username, profiles):
+    # case-insensitive lookup
+    key = next((u for u in profiles if u.lower() == username.lower()), username)
+    if key not in profiles:
+        profiles[key] = DEFAULT_PROFILE.copy()
+    return key, profiles[key]
+
 MODULES_FOLDER = 'modules'
 # Load available titles first
 try:
     with open('data/titles.json', 'r') as f:
         AVAILABLE_TITLES = json.load(f)
 except:
-    AVAILABLE_TITLES = ["Architect", "Operator", "Sentinel"]  # fallback titles
+    AVAILABLE_TITLES = ["Comander", "Architect", "Operator", "Sentinel"]  # fallback titles
 
 # Load or request user profile
 PROFILE_FILE = 'data/user_profile.json'
@@ -47,38 +90,7 @@ def save_user_profile(user_name, user_rank):
     with open(PROFILE_FILE, 'w') as f:
         json.dump(profile, f)
 
-# Attempt to load profile
-USER_NAME, USER_RANK = load_user_profile()
 
-# If a profile already exists, offer the choice
-if USER_NAME and USER_RANK:
-    print(f"\nWelcome back, {USER_RANK} {USER_NAME}.")
-
-    choice = input("\nWould you like to:\n 1) Use this profile\n 2) Select new name and title\n 3) Exit\n\nChoice: ").strip()
-
-    if choice == "2":
-        USER_NAME = input("Enter your name (or hit Enter for 'Aaron'): ").strip() or "Aaron"
-
-        print("\nAvailable Titles:")
-        for idx, title in enumerate(AVAILABLE_TITLES, start=1):
-            print(f"{idx}. {title}")
-
-        selected_title = input("\nChoose your title by number (or hit Enter for 'Architect'): ").strip()
-
-        if selected_title.isdigit() and 1 <= int(selected_title) <= len(AVAILABLE_TITLES):
-            USER_RANK = AVAILABLE_TITLES[int(selected_title) - 1]
-        else:
-            USER_RANK = "Architect"
-
-        save_user_profile(USER_NAME, USER_RANK)
-
-    elif choice == "3":
-        print("\nExiting NetAssist. Stay sharp out there.\n")
-        sys.exit()
-
-# If no profile found at all, fallback creation
-if not USER_NAME or not USER_RANK:
-    USER_NAME = input("Enter your name (or hit Enter for 'Aaron'): ").strip() or "Aaron"
 
     print("\nAvailable Titles:")
     for idx, title in enumerate(AVAILABLE_TITLES, start=1):
@@ -100,11 +112,29 @@ COMMANDS = [
     'help', 'clear', 'exit', 'motd', 'version', 'history', 'ls', 'masterkey',
     'password', 'ping', 'profile', 'traceroute', 'dnslookup', 'geoip', 'publicip', 'subnetcalc',
     'wildcardcalc', 'speedtest', 'whois', 'sslcheck', 'ntptest',
-    'ascii', 'ifconfig', 'ipconfig', 'ssh', 'tracert',
+    'ascii', 'ifconfig', 'ipconfig', 'ssh', 'tracert', 'role',
     'system', 'bandwidth', 'network', 'dashboard', 'connect', 'security', 'weather',
     'bonus', 'portcheck', 'banner', 'crypto', 'repair', 'fun', 'sysadmin', 'stat', 'matrix', 'fireworks',
     'alias', 'scan', 'netscan', 'savealias', 'threatfeed', 'loadalias', 'shortcuts', 'battery', 'notes', 'wifi'
 ]
+
+# === COMMAND META (usage + example) ===
+COMMAND_META = {
+    "ping":         {"usage": "ping <host>",                 "example": "ping 8.8.8.8"},
+    "traceroute":   {"usage": "traceroute <host>",           "example": "traceroute google.com"},
+    "dnslookup":    {"usage": "dnslookup <domain>",          "example": "dnslookup example.com"},
+    "geoip":        {"usage": "geoip <ip>",                  "example": "geoip 8.8.8.8"},
+    "publicip":     {"usage": "publicip",                    "example": "publicip"},
+    "subnetcalc":   {"usage": "subnetcalc <cidr>",           "example": "subnetcalc 10.10.10.0/24"},
+    "wildcardcalc": {"usage": "wildcardcalc <cidr>",         "example": "wildcardcalc 10.0.0.0/16"},
+    "speedtest":    {"usage": "speedtest",                   "example": "speedtest"},
+    "whois":        {"usage": "whois <domain>",              "example": "whois example.com"},
+    "sslcheck":     {"usage": "sslcheck <host>",             "example": "sslcheck example.com"},
+    "ntptest":      {"usage": "ntptest <ntp-server>",        "example": "ntptest pool.ntp.org"},
+    "portcheck":    {"usage": "portcheck <host> <ports>",    "example": "portcheck 192.168.1.1 22,80"},
+    "bandwidth":    {"usage": "bandwidth [interface]",       "example": "bandwidth eth0"},
+    # …add other commands here as you like
+}
 
 # === SHORTCUTS (Hidden in Menu) ===
 SHORTCUTS = {
@@ -169,13 +199,19 @@ readline.set_completer(completer)
 readline.set_history_length(200)
 # === BANNER ===
 def print_banner():
+    # Pull the experience title from YAML
+    exp_title = USER_PROFILE.get("title", "Rookie")
+    badge     = USER_PROFILE.get("badge", "")
+    level     = USER_PROFILE.get("level", 0)
+    xp        = USER_PROFILE.get("xp", 0)
+
     print(Fore.CYAN + f"""
-==============================================
-    {VERSION}
-    Welcome back, {USER_RANK} {USER_NAME} 🛡️
-==============================================
+============================================
+{VERSION}
+Welcome back, {exp_title} {USER_NAME} {badge}
+LEVEL {level}  |  XP: {xp}
+============================================
 """)
-    dynamic_motd()
     logging.info("Session started.")
 
 # === DYNAMIC MOTD ===
@@ -222,6 +258,14 @@ def paginate_output(lines):
         else:
             print("")  # Final blank line at the end for neatness
 
+# === QUICK USAGE HELPER =================================================
+def show_usage(cmd_key: str):
+    """Print usage + example if the command is documented."""
+    meta = COMMAND_META.get(cmd_key)
+    if meta:
+        print(Fore.CYAN + f"Usage   : {meta['usage']}")
+        print(Fore.CYAN + f"Example : {meta['example']}")
+# ========================================================================
 
 # === MATRIX MODE (Standard) ===
 def matrix_mode():
@@ -336,7 +380,7 @@ def load_profile(profile_name):
         apply_theme(ACTIVE_PROFILE.get("theme", "default"))
         splash_screen(ACTIVE_PROFILE.get("banner", "default"))
 
-        print(Fore.CYAN + f"\n🛡️ Profile '{profile_name}' loaded successfully.\n")
+        print(Fore.CYAN + f"\n🛡️Profile '{profile_name}' loaded successfully.\n")
 
     except Exception as e:
         print(Fore.RED + f"\nFailed to load profile: {e}\n")
@@ -409,19 +453,19 @@ def apply_theme(theme_name):
 
     if theme_name == "matrix_green":
         os.system('')  # enable color in terminal
-        print(Fore.GREEN + "\n🎨 Matrix Green theme activated.\n")
+        print(Fore.GREEN + "\n Matrix Green theme activated.\n")
     elif theme_name == "commander_blue":
         os.system('')
-        print(Fore.CYAN + "\n🎨 Commander Blue theme activated.\n")
+        print(Fore.CYAN + "\n Commander Blue theme activated.\n")
     elif theme_name == "battle_red":
         os.system('')
-        print(Fore.RED + "\n🎨 Battle Red theme activated.\n")
+        print(Fore.RED + "\n Battle Red theme activated.\n")
     elif theme_name == "cyberpunk_purple":
         os.system('')
-        print(Fore.MAGENTA + "\n🎨 Cyberpunk Purple theme activated.\n")
+        print(Fore.MAGENTA + "\n Cyberpunk Purple theme activated.\n")
     else:
         os.system('')
-        print(Fore.WHITE + "\n🎨 Default NetAssist theme activated.\n")
+        print(Fore.WHITE + "\n Default NetAssist theme activated.\n")
 
     CURRENT_THEME = theme_name
 
@@ -431,13 +475,17 @@ def splash_screen(style="default"):
     os.system('cls' if os.name == 'nt' else 'clear')
 
     current_profile = ACTIVE_PROFILE.get("name", "unknown").upper()
-    current_theme = ACTIVE_PROFILE.get("theme", "default").replace("_", " ").title()
+    current_theme   = ACTIVE_PROFILE.get("theme", "default").replace("_", " ").title()
 
     print(Fore.GREEN + "[BOOT] NetAssist Pro 5.1 Initialized")
-    print(Fore.CYAN + f"[PROFILE] {current_profile}")
-    print(Fore.CYAN + f"[THEME] {current_theme}")
-    print(Fore.CYAN + "[STATUS] SYSTEMS ONLINE")
-    print(Fore.YELLOW + f"[READY] Welcome, {USER_NAME} the {USER_RANK}")
+    print(Fore.CYAN  + f"[PROFILE] {current_profile}")
+    print(Fore.CYAN  + f"[THEME]   {current_theme}")
+    print(Fore.CYAN  + "[STATUS]  SYSTEMS ONLINE")
+
+    # Show the profile_role (from titles.json) first
+    role = USER_PROFILE.get("profile_role", "Operator")
+    print(Fore.YELLOW + f"[READY]   Welcome, {USER_NAME}, the {role}")
+
 
 # === STARTUP PROFILE SELECTOR ===
 
@@ -450,7 +498,7 @@ def select_profile_on_startup():
     chosen = input(Fore.YELLOW + "Profile > ").strip().lower()
 
     if chosen not in ["work", "lab", "home", "play"]:
-        print(Fore.RED + "\n⚠️ Invalid selection. Defaulting to 'work'.\n")
+        print(Fore.RED + "\n⚠️Invalid selection. Defaulting to 'work'.\n")
         chosen = "work"
 
     load_profile(chosen)
@@ -576,22 +624,99 @@ def master_key():
 
 # === MAIN CLI LOOP ===
 def main():
+    global USER_NAME, USER_PROFILE, USER_RANK, USER_BADGE, USER_LEVEL, USER_XP
+
+    # Step 1: Per-user login & profile load
+    import yaml
+    from pathlib import Path
+
+    PROFILES_FILE = Path('data/user_profiles.yaml')
+    profiles = yaml.safe_load(PROFILES_FILE.read_text()) or {}
+
+    raw = input("Enter your name (or hit Enter for 'Master'): ").strip() or "Master"
+    USER_NAME = raw.title()
+
+    key = next((u for u in profiles if u.lower()==USER_NAME.lower()), USER_NAME)
+    if key not in profiles:
+        profiles[key] = {"xp":0,"level":1,"title":"Rookie","badge":"::..::"}
+
+    USER_NAME, USER_PROFILE = key, profiles[key]
+        # ─── Prompt for profile_role if missing ─────────────────────────
+    if "profile_role" not in USER_PROFILE:
+        from pathlib import Path
+        import json
+
+        # Load the list of roles
+        with open(TITLES_FILE) as f:
+            roles = json.load(f)
+
+        # Show numbered list
+        print("\nAvailable Roles:")
+        for i, role in enumerate(roles, 1):
+            print(f" {i}) {role}")
+
+        # Let user pick one
+        sel = input("\nChoose your role by number (or hit Enter to skip): ").strip()
+        if sel.isdigit() and 1 <= int(sel) <= len(roles):
+            USER_PROFILE["profile_role"] = roles[int(sel) - 1]
+            # Persist immediately
+            PROFILES_FILE.write_text(yaml.dump(profiles, sort_keys=False))
+
+    USER_XP    = USER_PROFILE["xp"]
+    USER_LEVEL = USER_PROFILE["level"]
+    USER_BADGE = USER_PROFILE["badge"]
+        # Banner “rank” comes from profile_role if present, else experience title
+    USER_RANK = USER_PROFILE.get("profile_role", USER_PROFILE["title"])
+
+    #USER_RANK  = USER_PROFILE["title"]
+
+    PROFILES_FILE.write_text(yaml.dump(profiles, sort_keys=False))
+
+    # Step 2: deployment profile selection
     select_profile_on_startup()
 
+    # Step 3: show splash & banner
+    splash_screen()
     print_banner()
+
     while True:
         try:
-            cmd = input(get_prompt_color() + "NetAssist> ").strip()
-
-            if not cmd:
+            # ─── Read input ──────────────────────────────────────────
+            raw_input = input(get_prompt_color() + "NetAssist> ").strip()
+            if not raw_input:
                 continue
 
-            # Expand shortcuts
+            # ... rest of your loop unchanged ...
+
+
+            # ---------- QUICK HELP TRIGGER ---------------------------------
+            # user typed "<command> ?"   e.g. "ping ?"
+            if raw_input.endswith(" ?"):
+                base = raw_input[:-2].strip()
+                if base in COMMAND_META:
+                    show_usage(base)
+                    COMMAND_HISTORY.append(raw_input)
+                    continue
+            # ----------------------------------------------------------------
+
+            # 2) user typed "<command> ?"   e.g. "ping ?"
+            if raw_input.endswith(" ?"):
+                base = raw_input[:-2].strip()
+                if base in COMMAND_META:
+                    show_usage(base)
+                    COMMAND_HISTORY.append(raw_input)
+                    continue
+            # ---------------------------------------------------------
+
+            cmd   = raw_input
             words = cmd.split()
+
+            # ─── Expand shortcuts ------------------------------------
             if words[0] in SHORTCUTS:
                 words[0] = SHORTCUTS[words[0]]
-            cmd = ' '.join(words)
+            cmd = " ".join(words)
 
+            # ─── Notes handling (this line already exists below) -----
             if words[0] == 'note':
                 from modules import notes_tools
 
@@ -734,11 +859,22 @@ def main():
                 continue
 
             COMMAND_HISTORY.append(cmd)
+            # --- XP / RANK UPDATE -----------------------------------
+            # Give 5 XP for any successful command
+            USER_PROFILE = user_manager.award_xp(USER_NAME, amount=5)
+            user_manager.save_user(USER_NAME, USER_PROFILE)
+
+            # Refresh banner variables so the next banner shows new rank/xp
+            USER_RANK  = USER_PROFILE["title"]
+            USER_BADGE = USER_PROFILE["badge"]
+            USER_LEVEL = USER_PROFILE["level"]
+            USER_XP    = USER_PROFILE["xp"]
+            # ---------------------------------------------------------
 
             # Expand Aliases
             if cmd in ALIASES:
                 cmd = ALIASES[cmd]
-                print(Fore.YELLOW + f"\n💪 Alias expanding: {cmd}\n")
+                print(Fore.YELLOW + f"\n Alias expanding: {cmd}\n")
 
             # Split command for parsing
             words = cmd.split()
@@ -750,18 +886,55 @@ def main():
             if base_command == 'ping':
                 from modules import connection_tools
                 connection_tools.ping_direct(args[0])
+                continue
+
             elif base_command == 'scan':
                 from modules import network_scan
                 if args:
                     network_scan.run(args[0])
                 else:
                     network_scan.run()
+                continue
+
+            elif base_command == 'role':
+                import json, yaml
+                from pathlib import Path
+
+                # load roles
+                with open(TITLES_FILE) as f:
+                    roles = json.load(f)
+
+                print("\nAvailable Roles:")
+                for i, r in enumerate(roles,1):
+                    print(f" {i}) {r}")
+
+                sel = input("\nChoose your new role by number (or Enter to cancel): ").strip()
+                if sel.isdigit() and 1 <= int(sel) <= len(roles):
+                    new_role = roles[int(sel)-1]
+                    USER_PROFILE["profile_role"] = new_role
+                    USER_RANK = new_role   # just assign—no inline global needed
+
+                    # persist back to YAML
+                    PROFILES_FILE = Path('data/user_profiles.yaml')
+                    all_profiles = yaml.safe_load(PROFILES_FILE.read_text()) or {}
+                    all_profiles[USER_NAME] = USER_PROFILE
+                    PROFILES_FILE.write_text(yaml.dump(all_profiles, sort_keys=False))
+
+                    print(Fore.GREEN + f"\n Role updated: you are now {new_role}.\n")
+                else:
+                    print(Fore.YELLOW + "\nNo changes made.\n")
+
+                continue
+
+
+
             elif base_command == 'bandwidth':
                 from modules import bandwidth_monitor
                 if args:
                     bandwidth_monitor.bandwidth_direct(args[0])
                 else:
                     bandwidth_monitor.run()
+                continue
 
             elif base_command == 'wifi':
                 from modules import wifi_scanner
@@ -770,29 +943,34 @@ def main():
                     wifi_scanner.wifi_direct(min_signal)
                 else:
                     wifi_scanner.run()
+                continue
 
             elif base_command == 'portcheck':
                 from modules import port_check
                 if len(args) < 2:
                     print(Fore.RED + "\nUsage: portcheck <host> <port(s)>\n")
                 else:
-                    port_check.port_check_direct(args[0], args[1].split(','))   
-         
+                    port_check.port_check_direct(args[0], args[1].split(','))
+                continue
+
             elif base_command == 'netscan':
                 from modules import scan_manager
                 scan_manager.run()
+                continue
 
             elif base_command == 'traceroute':
                 from modules import connection_tools
                 connection_tools.traceroute_direct(args[0])
+                continue
+
             elif base_command == 'rce':
                 from modules import remote_tools
-
                 if len(args) != 1:
                     print(Fore.YELLOW + "\nUsage: rce <target_ip>\n")
                 else:
                     target_ip = args[0]
                     remote_tools.execute_remote_command(target_ip)
+                continue
 
             elif base_command == 'threatfeed':
                 from modules import threat_feed
@@ -800,77 +978,104 @@ def main():
                 if len(args) >= 1 and args[0] == 'all':
                     mode = 'all'
                 threat_feed.run(mode)
+                continue
 
             elif base_command == 'save-threats':
                 from modules import threat_feed
                 threat_feed.save_feed_snapshot()
+                continue
 
             elif base_command == 'dnslookup':
                 from modules import network_tools
                 network_tools.dnslookup_direct(args[0])
+                continue
 
             elif base_command == 'geoip':
                 from modules import network_tools
                 network_tools.geoip_direct(args[0])
+                continue
 
             elif base_command == 'subnetcalc':
                 from modules import network_tools
                 network_tools.subnet_calc_direct(args[0])
+                continue
 
             elif base_command == 'wildcardcalc':
                 from modules import network_tools
                 network_tools.wildcard_calc_direct(args[0])
+                continue
 
             elif base_command == 'publicip':
                 from modules import network_tools
                 network_tools.public_ip()
+                continue
 
             elif base_command == 'speedtest':
                 from modules import network_tools
                 network_tools.speedtest_direct()
+                continue
 
             elif base_command == 'whois':
                 from modules import security_tools
                 security_tools.whois_direct(args[0])
+                continue
 
             elif base_command == 'sslcheck':
                 from modules import bonus_tools
                 bonus_tools.ssl_checker_direct(args[0])
+                continue
 
             elif base_command == 'ntptest':
                 from modules import bonus_tools
                 bonus_tools.ntp_test_direct(args[0])
+                continue
 
             elif base_command == 'dice':
                 from modules import dice_roller
                 dice_roller.run()
+                continue
 
             elif base_command == 'joke':
                 from modules import dad_jokes
                 dad_jokes.run()
+                continue
 
             elif base_command == 'password':
                 from modules import password_tools
                 password_tools.run()
+                continue
 
             elif base_command == 'space':
                 from modules import space_facts
                 space_facts.run()
+                continue
 
             elif base_command == 'ascii':
                 from modules import ascii_art
                 ascii_art.run()
+                continue
 
             elif base_command == 'ssh':
                 os.system(f"ssh {args[0]}")
+                continue
+
             elif base_command == 'profile':
                 live_profile_switch(args)
+                continue
 
             elif base_command == 'ifconfig':
                 os.system('ifconfig')
+                continue
 
             elif base_command == 'ipconfig':
                 os.system('ip addr')
+                continue
+
+
+            # Safety check to ensure command is a string
+            if not isinstance(base_command, str):
+                print(Fore.RED + f"Invalid command format. Expected string but got {type(base_command)}: {base_command}")
+                continue
 
             elif base_command in MODULES:
                 mod = load_module(MODULES[base_command])

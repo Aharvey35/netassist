@@ -3,7 +3,7 @@ import requests
 from colorama import Fore
 
 def run():
-    city = input("\n🌦️  Enter city for weather lookup: ").strip()
+    city = input("\n🌦️Enter city for weather lookup: ").strip()
     get_weather(city)
 
 def get_weather(city):

@@ -6,7 +6,7 @@ import platform
 from colorama import Fore
 
 def run():
-    print("\n🛠️  Sysadmin PRO Tools")
+    print("\n🛠️ysadmin PRO Tools")
     print("Options:")
     print("  1. Current User")
     print("  2. Uptime (Detailed)")
@@ -36,34 +36,34 @@ def run():
 
 def current_user():
     user = getpass.getuser()
-    print(Fore.CYAN + f"\n👤 Current User: {user}\n")
+    print(Fore.CYAN + f"\n Current User: {user}\n")
 
 def uptime_detailed():
     uptime_seconds = int(psutil.boot_time())
     uptime_hours = (int(os.times().elapsed) / 3600)
-    print(Fore.CYAN + f"\n🕒 System Uptime: {uptime_hours:.2f} hours\n")
+    print(Fore.CYAN + f"\n System Uptime: {uptime_hours:.2f} hours\n")
 
 def cpu_info():
-    print(Fore.CYAN + f"\n🖥️  CPU Cores: {psutil.cpu_count(logical=True)} (logical) / {psutil.cpu_count(logical=False)} (physical)")
-    print(f"🖥️  CPU Usage: {psutil.cpu_percent(interval=1)}%\n")
+    print(Fore.CYAN + f"\n CPU Cores: {psutil.cpu_count(logical=True)} (logical) / {psutil.cpu_count(logical=False)} (physical)")
+    print(f"🖥️ CPU Usage: {psutil.cpu_percent(interval=1)}%\n")
 
 def memory_info():
     mem = psutil.virtual_memory()
-    print(Fore.CYAN + f"\n💾 Memory Total: {mem.total // (1024**2)}MB")
-    print(f"💾 Memory Used: {mem.used // (1024**2)}MB")
-    print(f"💾 Memory Free: {mem.free // (1024**2)}MB")
-    print(f"💾 Usage: {mem.percent}%\n")
+    print(Fore.CYAN + f"\n Memory Total: {mem.total // (1024**2)}MB")
+    print(f" Memory Used: {mem.used // (1024**2)}MB")
+    print(f" Memory Free: {mem.free // (1024**2)}MB")
+    print(f" Usage: {mem.percent}%\n")
 
 def disk_info():
     disk = psutil.disk_usage('/')
-    print(Fore.CYAN + f"\n📂 Disk Total: {disk.total // (1024**3)}GB")
-    print(f"📂 Disk Used: {disk.used // (1024**3)}GB")
-    print(f"📂 Disk Free: {disk.free // (1024**3)}GB")
-    print(f"📂 Usage: {disk.percent}%\n")
+    print(Fore.CYAN + f"\n Disk Total: {disk.total // (1024**3)}GB")
+    print(f" Disk Used: {disk.used // (1024**3)}GB")
+    print(f" Disk Free: {disk.free // (1024**3)}GB")
+    print(f" Usage: {disk.percent}%\n")
 
 def network_info():
     net = psutil.net_if_addrs()
-    print(Fore.CYAN + "\n🌐 Network Interfaces:")
+    print(Fore.CYAN + "\n Network Interfaces:")
     for interface, addrs in net.items():
         print(f"  {interface}:")
         for addr in addrs:
@@ -74,7 +74,7 @@ def network_info():
     print()
 
 def list_processes():
-    print(Fore.CYAN + "\n🔍 Top 5 Running Processes (by CPU %):")
+    print(Fore.CYAN + "\n Top 5 Running Processes (by CPU %):")
     processes = [(p.info['pid'], p.info['name'], p.info['cpu_percent']) for p in psutil.process_iter(['pid', 'name', 'cpu_percent'])]
     processes = sorted(processes, key=lambda p: p[2], reverse=True)[:5]
     for pid, name, cpu in processes:

@@ -1,0 +1,41 @@
+ranks:
+  - level: 1
+    title: Shell Newbie
+    xp_required: 0
+    badge: ".-."
+  - level: 2
+    title: Prompt Tinkerer
+    xp_required: 100
+    badge: ":--:"
+  - level: 3
+    title: Script Slinger
+    xp_required: 250
+    badge: "::||::"
+  - level: 4
+    title: Terminal Wrangler
+    xp_required: 500
+    badge: "=≡="
+  - level: 5
+    title: NetWhisperer
+    xp_required: 800
+    badge: "/\\/\\/"
+  - level: 6
+    title: Daemon Whisperer
+    xp_required: 1200
+    badge: "<||>"
+  - level: 7
+    title: Bash Baron
+    xp_required: 1700
+    badge: "[==>]"
+  - level: 8
+    title: Syslog Sage
+    xp_required: 2300
+    badge: "@@@@"
+  - level: 9
+    title: Kernel Alchemist
+    xp_required: 3000
+    badge: "#~#~"
+  - level: 10
+    title: Root Architect
+    xp_required: 4000
+    badge: "|||*|||"
