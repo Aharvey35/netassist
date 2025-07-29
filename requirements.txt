@@ -1,3 +1,6 @@
 requests
 speedtest-cli
 colorama
+sgp4
+geopy
+skyfield

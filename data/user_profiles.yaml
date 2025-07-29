@@ -1,14 +1,14 @@
 Aaron:
-  xp: 355
+  xp: 385
   title: Script Slinger
   level: 3
   badge: '::||::'
-  profile_role: System Architect
+  profile_role: Commander
 Zomelis:
-  xp: 15
-  title: Shell Newbie
-  level: 1
-  badge: .-.
+  xp: 683
+  title: Terminal Wrangler
+  level: 4
+  badge: "=\u2261="
   profile_role: Architect
 Master:
   xp: 0
@@ -21,3 +21,9 @@ Zadane:
   title: Prompt Tinkerer
   badge: ':--:'
   profile_role: Guardian
+Brooke:
+  xp: 50
+  level: 1
+  title: Shell Newbie
+  badge: .-.
+  profile_role: Agent

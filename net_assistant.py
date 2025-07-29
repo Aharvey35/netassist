@@ -1,4 +1,4 @@
-#net_assistant.py - NetAssist Pro 5.1 Tactical CLI OS
+#net_assistant.py - NetAssist Pro 5.3 Tactical CLI OS
 
 # === IMPORTS ===
 import os
@@ -13,8 +13,11 @@ import json
 import random
 import time
 from modules import user_manager
+from modules import sunset_tools
 from colorama import init, Fore
 from difflib import get_close_matches
+
+
 
 # === INITIALIZE COLORAMA ===
 init(autoreset=True)
@@ -111,10 +114,10 @@ today = datetime.date.today().isoformat()
 COMMANDS = [
     'help', 'clear', 'exit', 'motd', 'version', 'history', 'ls', 'masterkey',
     'password', 'ping', 'profile', 'traceroute', 'dnslookup', 'geoip', 'publicip', 'subnetcalc',
-    'wildcardcalc', 'speedtest', 'whois', 'sslcheck', 'ntptest',
-    'ascii', 'ifconfig', 'ipconfig', 'ssh', 'tracert', 'role',
-    'system', 'bandwidth', 'network', 'dashboard', 'connect', 'security', 'weather',
-    'bonus', 'portcheck', 'banner', 'crypto', 'repair', 'fun', 'sysadmin', 'stat', 'matrix', 'fireworks',
+    'wildcardcalc', 'portmatrix', 'speedtest', 'whois', 'sslcheck', 'ntptest',
+    'ascii', 'starlink', 'neofetch', 'ifconfig', 'ipconfig', 'ssh', 'tracert', 'role',
+    'system', 'sunset', 'bandwidth', 'network', 'dashboard', 'connect', 'security', 'weather',
+    'bonus', 'techterm', 'portcheck', 'banner', 'crypto', 'repair', 'fun', 'sysadmin', 'stat', 'matrix', 'fireworks',
     'alias', 'scan', 'netscan', 'savealias', 'threatfeed', 'loadalias', 'shortcuts', 'battery', 'notes', 'wifi'
 ]
 
@@ -133,6 +136,7 @@ COMMAND_META = {
     "ntptest":      {"usage": "ntptest <ntp-server>",        "example": "ntptest pool.ntp.org"},
     "portcheck":    {"usage": "portcheck <host> <ports>",    "example": "portcheck 192.168.1.1 22,80"},
     "bandwidth":    {"usage": "bandwidth [interface]",       "example": "bandwidth eth0"},
+    "sunset":       {"usage": "sunset",                      "example": "sunset"},
     # …add other commands here as you like
 }
 
@@ -325,13 +329,13 @@ def hacker_quote_blast():
 # === SECRET FUNCTION: HERO MOTIVATION ===
 def epic_motivation():
     messages = [
-        "Today you fight for your destiny. 🛡️",
+        "Today you fight for your destiny. ",
         "Heroes are made in battle, not in comfort.",
         "Stand tall — legends rise under pressure.",
         "Every champion was once a contender who refused to give up.",
         "Pain is temporary. Glory is forever.",
-        "You are the shield against the storm. 🌪️",
-        "Command the network. Command your fate. 🚀"
+        "You are the shield against the storm. ",
+        "Command the network. Command your fate. "
     ]
     try:
         for _ in range(5):
@@ -380,7 +384,7 @@ def load_profile(profile_name):
         apply_theme(ACTIVE_PROFILE.get("theme", "default"))
         splash_screen(ACTIVE_PROFILE.get("banner", "default"))
 
-        print(Fore.CYAN + f"\n🛡️Profile '{profile_name}' loaded successfully.\n")
+        print(Fore.CYAN + f"\n Profile '{profile_name}' loaded successfully.\n")
 
     except Exception as e:
         print(Fore.RED + f"\nFailed to load profile: {e}\n")
@@ -477,7 +481,7 @@ def splash_screen(style="default"):
     current_profile = ACTIVE_PROFILE.get("name", "unknown").upper()
     current_theme   = ACTIVE_PROFILE.get("theme", "default").replace("_", " ").title()
 
-    print(Fore.GREEN + "[BOOT] NetAssist Pro 5.1 Initialized")
+    print(Fore.GREEN + "[BOOT] NetAssist Pro 5.3 Initialized")
     print(Fore.CYAN  + f"[PROFILE] {current_profile}")
     print(Fore.CYAN  + f"[THEME]   {current_theme}")
     print(Fore.CYAN  + "[STATUS]  SYSTEMS ONLINE")
@@ -754,6 +758,22 @@ def main():
                 save_aliases()
                 continue
 
+            if cmd == 'word':
+                from modules import word_of_the_day
+                word_of_the_day.run()
+                continue
+
+            if cmd == 'starlink':
+                from modules import starlink_tracker
+                starlink_tracker.run()
+                continue
+
+            
+            if cmd == 'techterm':
+                from modules import tech_term_of_the_day
+                tech_term_of_the_day.run()
+                continue
+
             if cmd == 'loadalias':
                 load_aliases()
                 continue
@@ -766,6 +786,10 @@ def main():
                 matrix_mode()
                 continue
 
+            if cmd == 'sunset':
+                sunset_tools.run()
+                continue
+
             if cmd == 'fireworks':
                 fireworks_mode()
                 continue
@@ -774,7 +798,7 @@ def main():
                 import pytz
                 tz = pytz.timezone("US/Pacific")
                 now = datetime.now(tz)
-                print(Fore.CYAN + f"\n🕒 Current Pacific Time (PST): {now.strftime('%Y-%m-%d %H:%M:%S')}\n")
+                print(Fore.CYAN + f"\n Current Pacific Time (PST): {now.strftime('%Y-%m-%d %H:%M:%S')}\n")
                 continue
 
             if cmd == 'stat':
@@ -896,6 +920,28 @@ def main():
                     network_scan.run()
                 continue
 
+            elif words[0] == "portmatrix":
+                from modules.port_matrix import show_port_matrix
+                from modules.user_manager import award_xp
+                show_port_matrix()
+                USER_PROFILE = award_xp(USER_NAME, 3)
+                USER_RANK  = USER_PROFILE["title"]
+                USER_BADGE = USER_PROFILE["badge"]
+                USER_LEVEL = USER_PROFILE["level"]
+                USER_XP    = USER_PROFILE["xp"]
+                continue
+
+            elif base_command == 'search':
+                from modules import web_search
+                web_search.run_search(args)
+                USER_PROFILE = user_manager.award_xp(USER_NAME, 4)
+                USER_RANK  = USER_PROFILE["title"]
+                USER_BADGE = USER_PROFILE["badge"]
+                USER_LEVEL = USER_PROFILE["level"]
+                USER_XP    = USER_PROFILE["xp"]
+                continue
+    
+
             elif base_command == 'role':
                 import json, yaml
                 from pathlib import Path
@@ -936,6 +982,17 @@ def main():
                     bandwidth_monitor.run()
                 continue
 
+            elif words[0] in ["chrome", "firefox"]:
+                from modules import launcher_tools
+                launcher_tools.launch_app(words[0])
+                USER_PROFILE = user_manager.award_xp(USER_NAME, amount=2)
+                USER_RANK  = USER_PROFILE["title"]
+                USER_BADGE = USER_PROFILE["badge"]
+                USER_LEVEL = USER_PROFILE["level"]
+                USER_XP    = USER_PROFILE["xp"]
+                continue
+
+
             elif base_command == 'wifi':
                 from modules import wifi_scanner
                 if args:
@@ -956,6 +1013,11 @@ def main():
             elif base_command == 'netscan':
                 from modules import scan_manager
                 scan_manager.run()
+                continue
+            
+            elif base_command == 'neofetch':
+                from modules.neofetch_cmd import run_neofetch
+                run_neofetch()
                 continue
 
             elif base_command == 'traceroute':
