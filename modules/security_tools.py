@@ -9,7 +9,7 @@ except ImportError:
     WHOIS_AVAILABLE = False
 
 def run():
-    print("\n🔒 Security Tools")
+    print("\n Security Tools")
     print("Options:")
     print("  1. Port Check")
     print("  2. Whois Lookup")
@@ -33,9 +33,9 @@ def port_check():
         sock.settimeout(3)
         result = sock.connect_ex((host, int(port)))
         if result == 0:
-            print(Fore.CYAN + f"\n✅ Port {port} on {host} is OPEN.\n")
+            print(Fore.CYAN + f"\n Port {port} on {host} is OPEN.\n")
         else:
-            print(Fore.RED + f"\n❌ Port {port} on {host} is CLOSED.\n")
+            print(Fore.RED + f"\n Port {port} on {host} is CLOSED.\n")
         sock.close()
     except Exception as e:
         print(Fore.RED + f"Port check error: {e}")
@@ -53,7 +53,7 @@ def whois_direct(domain):
         return
     try:
         data = whois.whois(domain)
-        print(Fore.CYAN + f"\n🔎 Whois data for {domain}:")
+        print(Fore.CYAN + f"\n Whois data for {domain}:")
         for key, value in data.items():
             print(f"  {key}: {value}")
         print()

@@ -4,3 +4,4 @@ colorama
 sgp4
 geopy
 skyfield
+pyperclip

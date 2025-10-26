@@ -1,10 +1,26 @@
-# modules/password_tools.py
 import random
 import string
 import base64
 import hashlib
 import secrets
+from pathlib import Path
+from datetime import datetime
 from colorama import Fore, Style
+
+# File to store generated password history
+HISTORY_FILE = Path('data/password_history.txt')
+
+
+def save_password_history(password, method):
+    """Append a generated password to the history file with timestamp and method."""
+    try:
+        HISTORY_FILE.parent.mkdir(parents=True, exist_ok=True)
+    except Exception:
+        pass
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open(HISTORY_FILE, 'a', encoding='utf-8') as f:
+        f.write(f"{timestamp} [{method}] {password}\n")
+
 
 def run():
     while True:
@@ -42,13 +58,16 @@ def run():
         else:
             print(Fore.RED + "Invalid choice. Please try again.")
 
+
 def quick_pwgen():
     password = ''.join(secrets.choice(string.ascii_letters + string.digits + string.punctuation) for _ in range(16))
     print(Fore.YELLOW + Style.BRIGHT + "\n==============================")
     print(Fore.GREEN + Style.BRIGHT + f"Generated Password: {password}")
     print(Fore.YELLOW + Style.BRIGHT + "==============================")
     print("")
+    save_password_history(password, "quick")
     improved_strength_checker(password)
+
 
 def improved_strength_checker(password=None):
     if not password:
@@ -71,7 +90,8 @@ def improved_strength_checker(password=None):
         4: Fore.GREEN + "Very Strong",
         5: Fore.CYAN + "Excellent"
     }
-    print(Fore.MAGENTA + f"Password strength: {strength_levels.get(score, 'Weak')}")
+    print(Fore.MAGENTA + f"Password strength: {strength_levels.get(score, Fore.RED + 'Weak')}")
+
 
 def enhanced_policy_validator():
     print(Fore.CYAN + "\n🔎 Enhanced Password Policy Validator")
@@ -93,6 +113,7 @@ def enhanced_policy_validator():
     else:
         print(Fore.GREEN + "Password meets recommended policies!")
 
+
 def custom_pwgen():
     length = input(Fore.GREEN + "Enter desired password length (default 16): ").strip()
     length = int(length) if length.isdigit() else 16
@@ -106,14 +127,17 @@ def custom_pwgen():
     if include_symbols == 'y':
         characters += string.punctuation
     if exclude_ambiguous == 'y':
-        characters = characters.replace('O','').replace('0','').replace('l','').replace('1','')
+        for ch in ['O','0','l','1']:
+            characters = characters.replace(ch, '')
     
     password = ''.join(secrets.choice(characters) for _ in range(length))
     print(Fore.YELLOW + Style.BRIGHT + "\n==============================")
     print(Fore.GREEN + Style.BRIGHT + f"Generated Password: {password}")
     print(Fore.YELLOW + Style.BRIGHT + "==============================")
     print("")
+    save_password_history(password, "custom")
     improved_strength_checker(password)
+
 
 def hex_pwgen():
     length = input(Fore.GREEN + "Enter desired password length (default 32): ").strip()
@@ -124,7 +148,9 @@ def hex_pwgen():
     print(Fore.GREEN + Style.BRIGHT + f"Generated Hexadecimal Password: {password}")
     print(Fore.YELLOW + Style.BRIGHT + "==============================")
     print("")
+    save_password_history(password, "hex")
     improved_strength_checker(password)
+
 
 def base64_pwgen():
     length = input(Fore.GREEN + "Enter desired byte length (default 16): ").strip()
@@ -135,7 +161,9 @@ def base64_pwgen():
     print(Fore.GREEN + Style.BRIGHT + f"Generated Base64 Password: {password}")
     print(Fore.YELLOW + Style.BRIGHT + "==============================")
     print("")
+    save_password_history(password, "base64")
     improved_strength_checker(password)
+
 
 def sha256_hash():
     input_str = input(Fore.YELLOW + "Enter string to hash: ").strip()
@@ -144,17 +172,30 @@ def sha256_hash():
     print(Fore.GREEN + Style.BRIGHT + f"SHA-256 Hash: {hash_obj.hexdigest()}")
     print(Fore.YELLOW + Style.BRIGHT + "==============================")
 
+
 def passphrase_gen():
     words = ["galaxy", "nebula", "asteroid", "comet", "star", "planet", "orbit", "cosmos", "lunar", "solar"]
     count = input(Fore.GREEN + "Enter number of words (default 4): ").strip()
     count = int(count) if count.isdigit() else 4
-    separator = input(Fore.GREEN + "Enter separator (default '-'): ").strip() or '-'
+    separator = input(Fore.GREEN + "Enter separator (default '-'):").strip() or '-'
     phrase = separator.join(secrets.choice(words) for _ in range(count))
     print(Fore.YELLOW + Style.BRIGHT + "\n==============================")
     print(Fore.GREEN + Style.BRIGHT + f"Generated Passphrase: {phrase}")
     print(Fore.YELLOW + Style.BRIGHT + "==============================")
     print("")
+    save_password_history(phrase, "passphrase")
     improved_strength_checker(phrase)
 
+
 def view_password_history():
-    print(Fore.RED + "Password history functionality has been disabled.")
+    print(Fore.CYAN + "\n📜 Password History")
+    if not HISTORY_FILE.exists():
+        print(Fore.YELLOW + "No password history found.")
+        return
+    with open(HISTORY_FILE, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+    if not lines:
+        print(Fore.YELLOW + "No password history found.")
+        return
+    for line in lines:
+        print(Fore.LIGHTWHITE_EX + line.strip())

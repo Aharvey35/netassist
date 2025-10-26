@@ -2,5 +2,4 @@ __pycache__/
 *.pyc
 data/session_logs/
 data/user_profile.json
-data/user_profiles.yaml
 *.backup.py

@@ -39,3 +39,163 @@ ranks:
     title: Root Architect
     xp_required: 4000
     badge: "|||*|||"
+  - level: 11
+    title: Command Conqueror
+    xp_required: 4824
+    badge: ">!<"
+  - level: 12
+    title: Pipeline Pioneer
+    xp_required: 5845
+    badge: "|->|"
+  - level: 13
+    title: Grep Guardian
+    xp_required: 6965
+    badge: "/?*/"
+  - level: 14
+    title: Sed Sorcerer
+    xp_required: 8183
+    badge: "s//"
+  - level: 15
+    title: Awk Artisan
+    xp_required: 9500
+    badge: "{;;}"
+  - level: 16
+    title: Vim Virtuoso
+    xp_required: 10917
+    badge: ":wq"
+  - level: 17
+    title: Emacs Enchanter
+    xp_required: 12432
+    badge: "C-x"
+  - level: 18
+    title: Cron Crusader
+    xp_required: 14046
+    badge: "*/*"
+  - level: 19
+    title: SSH Sentinel
+    xp_required: 15758
+    badge: "~~>"
+  - level: 20
+    title: Firewall Fortifier
+    xp_required: 17570
+    badge: "|FW|"
+  - level: 21
+    title: Docker Dynamo
+    xp_required: 19481
+    badge: "[CNT]"
+  - level: 22
+    title: Kubernetes Kaiser
+    xp_required: 21490
+    badge: "K8S="
+  - level: 23
+    title: Git Grandmaster
+    xp_required: 23598
+    badge: "<-->"
+  - level: 24
+    title: Perl Prophet
+    xp_required: 25805
+    badge: "$@%"
+  - level: 25
+    title: Python Prodigy
+    xp_required: 28111
+    badge: ">>>"
+  - level: 26
+    title: Ruby Renegade
+    xp_required: 30516
+    badge: "end~"
+  - level: 27
+    title: Java Juggernaut
+    xp_required: 33020
+    badge: "{;}"
+  - level: 28
+    title: C++ Colossus
+    xp_required: 35623
+    badge: "++="
+  - level: 29
+    title: Assembly Archmage
+    xp_required: 38324
+    badge: "0x~"
+  - level: 30
+    title: Hacker Harbinger
+    xp_required: 41124
+    badge: "101"
+  - level: 31
+    title: Cyber Centurion
+    xp_required: 44023
+    badge: "[SEC]"
+  - level: 32
+    title: Network Nomad
+    xp_required: 47021
+    badge: "NET!"
+  - level: 33
+    title: Database Druid
+    xp_required: 50118
+    badge: "SQL="
+  - level: 34
+    title: Cloud Conjurer
+    xp_required: 53314
+    badge: "^~~^"
+  - level: 35
+    title: AI Arbiter
+    xp_required: 56609
+    badge: "[ML]"
+  - level: 36
+    title: Quantum Quester
+    xp_required: 60002
+    badge: "|0>"
+  - level: 37
+    title: Blockchain Baron
+    xp_required: 63495
+    badge: "[]->"
+  - level: 38
+    title: DevOps Demiurge
+    xp_required: 67086
+    badge: "CI/CD"
+  - level: 39
+    title: Security Sovereign
+    xp_required: 70776
+    badge: "LOCK="
+  - level: 40
+    title: SysAdmin Supreme
+    xp_required: 74565
+    badge: "ADM!"
+  - level: 41
+    title: Terminal Titan
+    xp_required: 78453
+    badge: "TERM="
+  - level: 42
+    title: Script Sovereign
+    xp_required: 82439
+    badge: "#!/bin"
+  - level: 43
+    title: Bash Behemoth
+    xp_required: 86525
+    badge: "${VAR}"
+  - level: 44
+    title: Kernel Knight
+    xp_required: 90709
+    badge: "[KRNL]"
+  - level: 45
+    title: Root Royalty
+    xp_required: 94992
+    badge: "SUDO!"
+  - level: 46
+    title: Command Cosmos
+    xp_required: 99375
+    badge: "***"
+  - level: 47
+    title: Digital Deity
+    xp_required: 103856
+    badge: "1&0"
+  - level: 48
+    title: Matrix Mastermind
+    xp_required: 108435
+    badge: "0101"
+  - level: 49
+    title: Universe Unlocker
+    xp_required: 113114
+    badge: "{UNI}"
+  - level: 50
+    title: Omni Operator
+    xp_required: 117892
+    badge: "ALL=="

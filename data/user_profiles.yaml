@@ -5,11 +5,11 @@ Aaron:
   badge: '::||::'
   profile_role: Commander
 Zomelis:
-  xp: 683
-  title: Terminal Wrangler
-  level: 4
-  badge: "=\u2261="
-  profile_role: Architect
+  xp: 4822
+  title: Root Architect
+  level: 10
+  badge: '|||*|||'
+  profile_role: Developer
 Master:
   xp: 0
   level: 1
@@ -27,3 +27,20 @@ Brooke:
   title: Shell Newbie
   badge: .-.
   profile_role: Agent
+N00B:
+  xp: 10
+  level: 1
+  title: Shell Newbie
+  badge: .-.
+  profile_role: Technician
+Eenie:
+  xp: 30
+  level: 1
+  title: Shell Newbie
+  badge: .-.
+  profile_role: Technician
+Exit:
+  xp: 0
+  level: 1
+  title: Rookie
+  badge: '::..::'

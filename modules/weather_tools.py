@@ -12,7 +12,7 @@ def get_weather(city):
         return
     try:
         api_key = 'demo'  # Note: Replace with a real free API key later if needed
-        url = f"https://wttr.in/{city}?format=3"
+        url = f"https://wttr.in/{city}?format=3&u"
         response = requests.get(url)
         if response.status_code == 200:
             print(Fore.CYAN + f"\n{response.text}\n")

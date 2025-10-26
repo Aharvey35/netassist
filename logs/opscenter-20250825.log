@@ -1,0 +1,168 @@
+2025-08-25T09:00:43 | Citrus Motors / Main Office | use org
+2025-08-25T09:00:47 | ND Testing / - | use net
+2025-08-25T09:00:50 | ND Testing / Fontana | overview
+2025-08-25T09:32:53 | ND Testing / Fontana | netassist
+2025-08-25T09:34:26 | ND Testing / Fontana | help
+2025-08-25T09:34:30 | ND Testing / Fontana | license
+2025-08-25T09:34:35 | ND Testing / Fontana | admins
+2025-08-25T09:34:38 | ND Testing / Fontana | alerts
+2025-08-25T09:34:40 | ND Testing / Fontana | events
+2025-08-25T09:34:45 | ND Testing / Fontana | help
+2025-08-25T09:34:50 | ND Testing / Fontana | wan health
+2025-08-25T09:35:15 | ND Testing / Fontana | clients top
+2025-08-25T09:37:23 | ND Testing / Fontana | exit
+2025-08-25T09:44:14 | ASI LAB / ASI Lab 1 | use org
+2025-08-25T09:44:45 | ND Testing / - | use net
+2025-08-25T09:44:54 | ND Testing / Fontana | mx vpn
+2025-08-25T09:44:57 | ND Testing / Fontana | switch status
+2025-08-25T09:46:02 | ND Testing / Fontana | help
+2025-08-25T09:46:06 | ND Testing / Fontana | client ifnd
+2025-08-25T09:46:11 | ND Testing / Fontana | client find
+2025-08-25T09:48:19 | ND Testing / Fontana | switch port
+2025-08-25T09:48:21 | ND Testing / Fontana | switch ports
+2025-08-25T09:48:29 | ND Testing / Fontana | switch ports
+2025-08-25T09:50:16 | ND Testing / Fontana | help
+2025-08-25T09:50:47 | ND Testing / Fontana | 
+2025-08-25T09:50:51 | ND Testing / Fontana | neighbors
+2025-08-25T09:50:58 | ND Testing / Fontana | neighbors ?
+2025-08-25T09:51:02 | ND Testing / Fontana | help neighbors
+2025-08-25T09:51:07 | ND Testing / Fontana | neighbors --pick
+2025-08-25T09:51:43 | ND Testing / Fontana | neighbors
+2025-08-25T09:51:47 | ND Testing / Fontana | neighbors
+2025-08-25T09:52:03 | ND Testing / Fontana | vlan list
+2025-08-25T12:13:39 | ND Testing / Fontana | exit
+2025-08-25T12:14:06 | ASI LAB / ASI Lab 1 | l3 overview
+2025-08-25T12:14:17 | ASI LAB / ASI Lab 1 | l3
+2025-08-25T12:14:19 | ASI LAB / ASI Lab 1 | l3 svis
+2025-08-25T12:42:30 | ASI LAB / ASI Lab 1 | exit
+2025-08-25T12:42:38 | ASI LAB / ASI Lab 1 | use org
+2025-08-25T12:42:40 | ND Testing / - | use net
+2025-08-25T12:42:41 | ND Testing / Fontana | 
+2025-08-25T12:42:41 | ND Testing / Fontana | 
+2025-08-25T12:42:44 | ND Testing / Fontana | l3 overview
+2025-08-25T12:42:57 | ND Testing / Fontana | ls routes
+2025-08-25T12:42:59 | ND Testing / Fontana | l3 routes
+2025-08-25T12:43:03 | ND Testing / Fontana | l3 svis
+2025-08-25T12:45:49 | ND Testing / Fontana | exit
+2025-08-25T12:46:01 | ASI LAB / ASI Lab 1 | l3 overview
+2025-08-25T12:46:04 | ASI LAB / ASI Lab 1 | l3 routes
+2025-08-25T12:49:05 | ASI LAB / ASI Lab 1 | exit
+2025-08-25T12:49:16 | ASI LAB / ASI Lab 1 | l3 overview
+2025-08-25T12:49:19 | ASI LAB / ASI Lab 1 | l3 routes
+2025-08-25T12:49:51 | ASI LAB / ASI Lab 1 | use org
+2025-08-25T12:49:54 | ND Testing / - | use net
+2025-08-25T12:49:58 | ND Testing / Fontana | l3 overview
+2025-08-25T13:04:14 | ND Testing / Fontana | help
+2025-08-25T13:04:21 | ND Testing / Fontana | clients find
+2025-08-25T13:04:25 | ND Testing / Fontana | client find
+2025-08-25T13:06:12 | ND Testing / Fontana | ping 192.168.253.26
+2025-08-25T13:23:12 | ND Testing / Fontana | exit
+2025-08-25T13:23:20 | ASI LAB / ASI Lab 1 | l3 overview
+2025-08-25T13:23:25 | ASI LAB / ASI Lab 1 | l3 staticroute
+2025-08-25T13:23:28 | ASI LAB / ASI Lab 1 | l3 route
+2025-08-25T13:23:51 | ASI LAB / ASI Lab 1 | l3 svis
+2025-08-25T13:28:37 | ASI LAB / ASI Lab 1 | exit
+2025-08-25T13:28:49 | ASI LAB / ASI Lab 1 | l3 overview
+2025-08-25T13:28:56 | ASI LAB / ASI Lab 1 | use org
+2025-08-25T13:28:59 | ND Testing / - | use net
+2025-08-25T13:29:04 | ND Testing / Fontana | l3 svis
+2025-08-25T13:29:09 | ND Testing / Fontana | l3 routes
+2025-08-25T13:29:15 | ND Testing / Fontana | l3 overview
+2025-08-25T13:31:57 | ND Testing / Fontana | 
+2025-08-25T13:31:58 | ND Testing / Fontana | 
+2025-08-25T13:32:08 | ND Testing / Fontana | switch ports
+2025-08-25T13:32:39 | ND Testing / Fontana | client find
+2025-08-25T13:35:39 | ND Testing / Fontana | 
+2025-08-25T13:35:39 | ND Testing / Fontana | 
+2025-08-25T13:35:40 | ND Testing / Fontana | exit
+2025-08-25T13:35:51 | ASI LAB / ASI Lab 1 | l3 overview
+2025-08-25T13:35:54 | ASI LAB / ASI Lab 1 | l3
+2025-08-25T13:35:58 | ASI LAB / ASI Lab 1 | l3 svis
+2025-08-25T13:36:11 | ASI LAB / ASI Lab 1 | exit
+2025-08-25T13:36:21 | ASI LAB / ASI Lab 1 | l3 overview
+2025-08-25T13:36:25 | ASI LAB / ASI Lab 1 | L3 overview
+2025-08-25T13:41:59 | ASI LAB / ASI Lab 1 | exit
+2025-08-25T13:42:09 | ASI LAB / ASI Lab 1 | l3 overview
+2025-08-25T13:42:19 | ASI LAB / ASI Lab 1 | use org
+2025-08-25T13:42:22 | ND Testing / - | use net
+2025-08-25T13:42:25 | ND Testing / Fontana | l3 overview
+2025-08-25T13:42:49 | ND Testing / Fontana | l3 routes
+2025-08-25T13:42:56 | ND Testing / Fontana | l3 svis
+2025-08-25T13:43:04 | ND Testing / Fontana | help l3
+2025-08-25T13:43:11 | ND Testing / Fontana | use org
+2025-08-25T13:43:14 | Citrus Motors / - | use net
+2025-08-25T13:43:15 | Citrus Motors / Main Office | l3 routes
+2025-08-25T13:43:37 | Citrus Motors / Main Office | l3 svis
+2025-08-25T13:43:42 | Citrus Motors / Main Office | l3 overview
+2025-08-25T13:48:55 | Citrus Motors / Main Office | use org
+2025-08-25T13:49:01 | ASI LAB / - | use net
+2025-08-25T13:49:12 | ASI LAB / ASI Lab 1 | device list
+2025-08-25T13:49:16 | ASI LAB / ASI Lab 1 | devices list
+2025-08-25T13:49:23 | ASI LAB / ASI Lab 1 | devices status
+2025-08-25T13:49:36 | ASI LAB / ASI Lab 1 | help
+2025-08-25T13:49:40 | ASI LAB / ASI Lab 1 | switch set
+2025-08-25T13:51:12 | ASI LAB / ASI Lab 1 | switch ports
+2025-08-25T13:51:29 | ASI LAB / ASI Lab 1 | switch set
+2025-08-25T14:07:45 | ASI LAB / ASI Lab 1 | help
+2025-08-25T15:40:11 | ASI LAB / ASI Lab 1 | use org
+2025-08-25T15:40:16 | AMPTP / - | use net
+2025-08-25T15:40:18 | AMPTP / AMPTP Sherman Oaks | overview
+2025-08-25T15:40:32 | AMPTP / AMPTP Sherman Oaks | mx vpn
+2025-08-25T15:40:36 | AMPTP / AMPTP Sherman Oaks | mx status
+2025-08-25T15:40:51 | AMPTP / AMPTP Sherman Oaks | show routes
+2025-08-25T15:41:07 | AMPTP / AMPTP Sherman Oaks | svi
+2025-08-25T15:41:07 | AMPTP / AMPTP Sherman Oaks | 
+2025-08-25T15:41:10 | AMPTP / AMPTP Sherman Oaks | svi
+2025-08-25T15:41:11 | AMPTP / AMPTP Sherman Oaks | svis
+2025-08-25T15:41:17 | AMPTP / AMPTP Sherman Oaks | l33 svis
+2025-08-25T15:41:20 | AMPTP / AMPTP Sherman Oaks | l3 svis
+2025-08-25T15:41:39 | AMPTP / AMPTP Sherman Oaks | help
+2025-08-25T15:42:15 | AMPTP / AMPTP Sherman Oaks | traffic summary
+2025-08-25T15:42:25 | AMPTP / AMPTP Sherman Oaks | clients top
+2025-08-25T15:42:38 | AMPTP / AMPTP Sherman Oaks | wifi ssids
+2025-08-25T15:42:48 | AMPTP / AMPTP Sherman Oaks | wifi health
+2025-08-25T15:43:06 | AMPTP / AMPTP Sherman Oaks | devices status
+2025-08-25T15:43:18 | AMPTP / AMPTP Sherman Oaks | use org
+2025-08-25T15:43:28 | Daniels Tire Service / - | use net
+2025-08-25T15:43:36 | Daniels Tire Service / DTS - Santa Fe | overview
+2025-08-25T15:43:51 | Daniels Tire Service / DTS - Santa Fe | license
+2025-08-25T15:44:14 | Daniels Tire Service / DTS - Santa Fe | alerts
+2025-08-25T15:44:18 | Daniels Tire Service / DTS - Santa Fe | mx status
+2025-08-25T15:44:45 | Daniels Tire Service / DTS - Santa Fe | events
+2025-08-25T15:44:48 | Daniels Tire Service / DTS - Santa Fe | help events
+2025-08-25T15:44:59 | Daniels Tire Service / DTS - Santa Fe | events switch
+2025-08-25T15:45:46 | Daniels Tire Service / DTS - Santa Fe | client find
+2025-08-25T15:46:05 | Daniels Tire Service / DTS - Santa Fe | show arp
+2025-08-25T16:01:14 | Daniels Tire Service / DTS - Santa Fe | exit
+2025-08-25T16:02:07 | ASI LAB / ASI Lab 1 | show mac address-table
+2025-08-25T16:02:08 | ASI LAB / ASI Lab 1 | show arp
+2025-08-25T16:07:41 | ASI LAB / ASI Lab 1 | 
+2025-08-25T16:07:41 | ASI LAB / ASI Lab 1 | 
+2025-08-25T16:07:39 | ASI LAB / ASI Lab 1 | exit
+2025-08-25T16:08:04 | ASI LAB / ASI Lab 1 | show arp
+2025-08-25T16:08:11 | ASI LAB / ASI Lab 1 | use org
+2025-08-25T16:08:15 | ND Testing / - | use net
+2025-08-25T16:08:17 | ND Testing / Fontana | show arp
+2025-08-25T16:08:34 | ND Testing / Fontana | show mac
+2025-08-25T16:08:40 | ND Testing / Fontana | client find
+2025-08-25T16:09:14 | ND Testing / Fontana | overview
+2025-08-25T16:11:44 | ND Testing / Fontana | exit
+2025-08-25T16:12:14 | ASI LAB / ASI Lab 1 | show arp
+2025-08-25T16:12:19 | ASI LAB / ASI Lab 1 | use org
+2025-08-25T16:12:24 | asi-networks / - | use net
+2025-08-25T16:12:31 | asi-networks / ASI Lab 1 | show arp
+2025-08-25T16:16:14 | asi-networks / ASI Lab 1 | exit
+2025-08-25T16:16:34 | ASI LAB / ASI Lab 1 | show arp
+2025-08-25T16:16:40 | ASI LAB / ASI Lab 1 | client find
+2025-08-25T16:17:07 | ASI LAB / ASI Lab 1 | help
+2025-08-25T16:17:34 | ASI LAB / ASI Lab 1 | show arp
+2025-08-25T16:20:58 | ASI LAB / ASI Lab 1 | exit
+2025-08-25T16:27:41 | ASI LAB / ASI Lab 1 | exit
+2025-08-25T16:28:04 | ASI LAB / ASI Lab 1 | show arp
+2025-08-25T16:29:35 | ASI LAB / ASI Lab 1 | use org
+2025-08-25T16:29:37 | ND Testing / - | use net
+2025-08-25T16:29:40 | ND Testing / Fontana | show arp
+2025-08-25T16:29:55 | ND Testing / Fontana | show mac address-table
+2025-08-25T16:29:57 | ND Testing / Fontana | help
+2025-08-25T16:30:07 | ND Testing / Fontana | show mac address
+2025-08-25T16:30:17 | ND Testing / Fontana | show mac address-table

@@ -115,9 +115,9 @@ COMMANDS = [
     'help', 'clear', 'exit', 'motd', 'version', 'history', 'ls', 'masterkey',
     'password', 'ping', 'profile', 'traceroute', 'dnslookup', 'geoip', 'publicip', 'subnetcalc',
     'wildcardcalc', 'portmatrix', 'speedtest', 'whois', 'sslcheck', 'ntptest',
-    'ascii', 'starlink', 'neofetch', 'ifconfig', 'ipconfig', 'ssh', 'tracert', 'role',
-    'system', 'sunset', 'bandwidth', 'network', 'dashboard', 'connect', 'security', 'weather',
-    'bonus', 'techterm', 'portcheck', 'banner', 'crypto', 'repair', 'fun', 'sysadmin', 'stat', 'matrix', 'fireworks',
+    'ascii', 'techterm', 'starlink', 'neofetch', 'ifconfig', 'ipconfig', 'ssh', 'tracert', 'role',
+    'chrome', 'system', 'sunset', 'bandwidth', 'network', 'dashboard', 'connect', 'security', 'weather',
+    'bonus', 'portcheck', 'banner', 'crypto', 'repair', 'fun', 'sysadmin', 'stat', 'matrix', 'fireworks',
     'alias', 'scan', 'netscan', 'savealias', 'threatfeed', 'loadalias', 'shortcuts', 'battery', 'notes', 'wifi'
 ]
 
@@ -150,7 +150,7 @@ SHORTCUTS = {
 
 # === COMMON TYPOS MAP ===
 COMMON_TYPOS = {
-    'geop': 'geoip', 'pimg': 'ping', 'tracerotue': 'traceroute',
+    'goeip': 'geoip', 'geop': 'geoip', 'pimg': 'ping', 'tracerotue': 'traceroute',
     'dnslooup': 'dnslookup', 'baner': 'banner', 'whios': 'whois', 'speetest': 'speedtest',
     'subntcalc': 'subnetcalc', 'wildcradcalc': 'wildcardcalc',
     'sslchek': 'sslcheck', 'netptest': 'ntptest'
@@ -687,6 +687,7 @@ def main():
         try:
             # ─── Read input ──────────────────────────────────────────
             raw_input = input(get_prompt_color() + "NetAssist> ").strip()
+
             if not raw_input:
                 continue
 
@@ -946,19 +947,31 @@ def main():
                 import json, yaml
                 from pathlib import Path
 
-                # load roles
+                # If user typed "role show", just display and bail.
+                if args and args[0].lower() in ("show", "status", "current"):
+                    effective_role = USER_PROFILE.get("profile_role") or USER_PROFILE.get("title", "Rookie")
+                    print(Fore.CYAN + "\nCurrent Role")
+                    print(Fore.CYAN + "------------")
+                    print(Fore.YELLOW + f"User      : {USER_NAME}")
+                    print(Fore.YELLOW + f"Role      : {effective_role}")
+                    print(Fore.YELLOW + f"Level     : {USER_PROFILE.get('level', 0)}")
+                    print(Fore.YELLOW + f"XP        : {USER_PROFILE.get('xp', 0)}\n")
+                    continue
+
+                # Otherwise, proceed with the existing selection flow
                 with open(TITLES_FILE) as f:
                     roles = json.load(f)
 
                 print("\nAvailable Roles:")
-                for i, r in enumerate(roles,1):
+                for i, r in enumerate(roles, 1):
                     print(f" {i}) {r}")
 
                 sel = input("\nChoose your new role by number (or Enter to cancel): ").strip()
                 if sel.isdigit() and 1 <= int(sel) <= len(roles):
-                    new_role = roles[int(sel)-1]
+                    new_role = roles[int(sel) - 1]
                     USER_PROFILE["profile_role"] = new_role
-                    USER_RANK = new_role   # just assign—no inline global needed
+                    # Update effective rank immediately for banner/prompt consistency
+                    USER_RANK = new_role
 
                     # persist back to YAML
                     PROFILES_FILE = Path('data/user_profiles.yaml')
@@ -966,13 +979,10 @@ def main():
                     all_profiles[USER_NAME] = USER_PROFILE
                     PROFILES_FILE.write_text(yaml.dump(all_profiles, sort_keys=False))
 
-                    print(Fore.GREEN + f"\n Role updated: you are now {new_role}.\n")
+                    print(Fore.GREEN + f"\nRole updated: you are now {new_role}.\n")
                 else:
                     print(Fore.YELLOW + "\nNo changes made.\n")
-
                 continue
-
-
 
             elif base_command == 'bandwidth':
                 from modules import bandwidth_monitor
@@ -984,13 +994,35 @@ def main():
 
             elif words[0] in ["chrome", "firefox"]:
                 from modules import launcher_tools
-                launcher_tools.launch_app(words[0])
-                USER_PROFILE = user_manager.award_xp(USER_NAME, amount=2)
-                USER_RANK  = USER_PROFILE["title"]
-                USER_BADGE = USER_PROFILE["badge"]
-                USER_LEVEL = USER_PROFILE["level"]
-                USER_XP    = USER_PROFILE["xp"]
+                # Pass everything after the command (URL, flags, etc.)
+                try:
+                    launcher_tools.launch_app(words[0], words[1:])
+                    USER_PROFILE = user_manager.award_xp(USER_NAME, amount=2)
+                    USER_RANK  = USER_PROFILE["title"]
+                    USER_BADGE = USER_PROFILE["badge"]
+                    USER_LEVEL = USER_PROFILE["level"]
+                    USER_XP    = USER_PROFILE["xp"]
+
+                except Exception as e:
+                    print(f"Launch error: {e}")
                 continue
+
+
+            elif words[0].lower() == "meraki":
+                from modules.meraki import run_console
+                try:
+                    # Pass additional words for direct action usage, e.g.:
+                    #   meraki setup
+                    #   meraki mx status
+                    #   meraki vlan list
+                    run_console(words[1:])
+                    USER_PROFILE = user_manager.award_xp(USER_NAME, amount=5)
+                    USER_LEVEL = USER_PROFILE["level"]; USER_BADGE = USER_PROFILE["badge"]; USER_RANK = USER_PROFILE["title"]
+                except Exception as e:
+                    print(f"Meraki console error: {e}")
+                continue
+
+        
 
 
             elif base_command == 'wifi':
@@ -1026,13 +1058,64 @@ def main():
                 continue
 
             elif base_command == 'rce':
-                from modules import remote_tools
-                if len(args) != 1:
-                    print(Fore.YELLOW + "\nUsage: rce <target_ip>\n")
-                else:
-                    target_ip = args[0]
-                    remote_tools.execute_remote_command(target_ip)
+                # new rce handler using modules.rce_tools
+                from modules import rce_tools
+                # args: could be just <host> or: <host> --user USER --cmd "command" [--ps]
+                import shlex
+                if not args:
+                    print(Fore.YELLOW + "\nUsage: rce <host> [--user USER] [--cmd \"command\"] [--ps]\n")
+                    continue
+                # basic parse
+                toks = [args[0]] + args[1:]
+                rest = " ".join(toks)
+                toks = shlex.split(rest)
+                host = toks[0]
+                username = None
+                command = None
+                use_ps = False
+                it = iter(toks[1:])
+                for tk in it:
+                    if tk in ("-u", "--user"):
+                        username = next(it, None)
+                    elif tk in ("--cmd", "-c", "--command"):
+                        command = next(it, None)
+                    elif tk == "--ps":
+                        use_ps = True
+                # If no command provided, prompt interactively
+                if command is None:
+                    command = input("Command to run on remote host: ")
+                # confirm destructive-looking commands (very simple heuristic)
+                low = command.lower()
+                if any(x in low for x in ("format ", " del ", " remove ", "shutdown", "reboot", "restart")):
+                    ok = input("Command looks destructive. Proceed? (y/N): ").strip().lower()
+                    if ok != "y":
+                        print("Cancelled.")
+                        continue
+                # run remote command
+                rc, out, err = rce_tools.rce(host, username=username, password=None, command=command, use_ps=use_ps)
+                if out:
+                    print(out)
+                if err:
+                    print(Fore.RED + err)
+                print(Fore.CYAN + f"Remote exit code: {rc}")
                 continue
+
+            
+            elif base_command == 'rceconnect':
+                from modules import rce_tools
+                if not args:
+                    print(Fore.YELLOW + "\nUsage: rceconnect <host> [--width W] [--height H]\n")
+                    continue
+                host = args[0]
+                width = 1280
+                height = 720
+                # optional parse
+                if len(args) >= 3 and args[1] == "--width":
+                    width = int(args[2])
+                ok = rce_tools.rceconnect(host, width=width, height=height)
+                print("Launched RDP:", ok)
+                continue
+
 
             elif base_command == 'threatfeed':
                 from modules import threat_feed
